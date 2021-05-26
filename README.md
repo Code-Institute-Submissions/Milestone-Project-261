@@ -1,59 +1,119 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Milestone Project 3
 
-Welcome USER_NAME,
+## Contents
+* [Purpose](#Purpose)
+* [UX](#UX)
+* [Technologies](#Technologies)
+* [Testing](#Testing)
+* [Supported Browsers And Devices](#Supported-Browsers-And-Devices)
+* [Deployment](#Deployment)
+* [Credits](#Credits)
+<br>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## Purpose
 
-## Gitpod Reminders
+The purpose of this project is to showcase everything I have learned within the Python and Backend Development modules of the Code Institute Full Stack Development course. A full list of technologies used can be found in the technologies section of this document.
+<br>
+<br>
+The purpose of the website is to allow users to browse and comment on Cryptocurrencies as well as create their own watchlists. 
+<br>
+<br>
+Disclaimer: This website is for educational purposes only , this is not financial advise.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Milestone Project 3 link
+<br>
+<br>
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: _Make Public_,
+### User Stories
+As a user I want to:
 
-Another blue button should appear to click: _Open Browser_.
+1. Browse cryptocurrencies.
+1. Search for cryptocurrencies I am interested in.
+1. Create my own watchlist.
+1. Remove cryptocurrencies from my watchlist.
+1. Comment on cryptocurrencies.
+1. Edit comments I have submitted.
+1. Delete comments I have submitted.
+1. See comments from other people.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Structure
 
-A blue button should appear to click: _Make Public_,
+### Design
 
-Another blue button should appear to click: _Open Browser_.
+#### Colour Scheme
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Typography
 
-To log into the Heroku toolbelt CLI:
+#### Wireframes
+To see the wireframes for all pages on both desktop and mobile view please click the below link.
+<br>
+[Wireframes](wireframes/wireframes.pdf)
+<br>
+<br>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Technologies
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+* **HTML** - This has been used to structure the project.
+* **CSS** - This has been used to style the project.
+* **Java Script** - This has been used to add complex features to the project.
+* **Bootstrap** - This has been used to create the navigation bar and contact form.
+* **Font Awesome** - This has been used to import Oswald font and social media icons.
+* **GitHub** - This has been used to store and deploy the code for the project.
+* **GitPod** - This has been used to create the code for the project.
+* **Google Chrome Developer Tools** - This has been used to inspect the web pages and debug any issues.
+* **Balsamiq Wireframes** - This has been used to create the wireframes for the project.
+<br>
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Testing
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Code Validation
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* HTML file has been validated using the W3C HTML Validation Service website.
+* CSS file has been validated using the W3C CSS Validation Service website.
+* JS files have been validated using the JSHint website.
+* Python files have been validated using the PEP8 website.
+<br>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### User Story Testing
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Supported Browsers And Devices
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Below is all the browsers and devices the website has been tested on.
+<br>
+<br>
+**Google Chrome (Right clicked the page and selected Inspect then Toggle Device Toolbar)**
+<br>
+**Microsoft Edge (Right clicked the page and selected Inspect then Toggle Device Emulation)**
+* Moto G4
+* Galaxy S5
+* Pixel 2
+* Pixel 2 XL
+* iPhone 5/SE
+* iPhone 6/7/8
+* iPhone 6/7/8 Plus
+* iPhone X
+* iPad
+* iPad Pro
+* Surface Duo
+* Galaxy Fold
+<br>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+**Firefox (Right clicked the page and selected Inspect Element then Responsive Design Mode)**
+* Galaxy S9/S9+
+* iPad
+* iPhone 6/7/8
+* iPhone 6/7/8 Plus
+* iPhone X/XS
+* Kindle Fire HDX
+<br>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Deployment
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Credits
 
----
 
-Happy coding!
+  
