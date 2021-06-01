@@ -3,6 +3,7 @@
 ## Contents
 * [Purpose](#Purpose)
 * [UX](#UX)
+* [Features](#Features)
 * [Technologies](#Technologies)
 * [Testing](#Testing)
 * [Supported Browsers And Devices](#Supported-Browsers-And-Devices)
@@ -27,16 +28,25 @@ Milestone Project 3 link
 ## UX
 
 ### User Stories
-As a user I want to:
+As a anonymous user I want to:
 
 1. Browse cryptocurrencies.
 1. Search for cryptocurrencies I am interested in.
-1. Create my own watchlist.
+1. See comments on cryptocurrencies from other people.
+<br>
+
+As a registered user I want to:
+
+1. Add crpytocurrencies to my own watchlist.
 1. Remove cryptocurrencies from my watchlist.
 1. Comment on cryptocurrencies.
 1. Edit comments I have submitted.
 1. Delete comments I have submitted.
-1. See comments from other people.
+<br>
+
+As a admin user I want to:
+
+1. Delete comments from any user to prevent spam.
 
 ### Structure
 
@@ -52,6 +62,18 @@ To see the wireframes for all pages on both desktop and mobile view please click
 [Wireframes](wireframes/wireframes.pdf)
 <br>
 <br>
+
+## Features
+
+### Planned Features
+* The header will contain a sticky navigation bar. For unregistered users this will have 3 links which will direct you to the following pages; Browse, Log In & Sign Up. For registered users this will show links to the Browse and Watchlist page as well as a Log Out link.
+* The mobile view will get rid of the navigation bar and instead have a navigation button. When clicking this button, the navigation links will appear vertically on the page. 
+* The Home page will display information about the website and have a button linking to the Browse page.
+* The Browse page will display Cryptocurrencies. Clicking on a Crypto will take you to another page displaying more information about it. Registered users will be able to submit, edit and delete their own comments.
+* The Sign Up page will allow users to register to the website.
+* The Log In page will allow registered users to log in to the website.
+* The Watchlist page will allow registered users to create their own Watchlist of cryptocurrencies.
+
 
 ## Technologies
 
