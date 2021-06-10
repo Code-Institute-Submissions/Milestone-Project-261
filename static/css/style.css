@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:100,200,300,400,500,600,700|Expletus+Sans:100,200,300,400,500,600,700');
+
+/* ---------------------------------------------HTML/Body */
+
+body,html {
+  height: 100%;
+}
+
+
+/* ---------------------------------------------Heading */
+.navbar-brand {
+	font-family: "Oswald", sans-serif;
+	font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: #DAA520 !important;
+}
+
+.nav-link {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.fixed-top {
+	position: fixed;
+}
