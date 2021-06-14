@@ -16,11 +16,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+cryptos_coll = mongo.db.cryptos
+users_coll = mongo.db.users
+comments_coll = mongo.db.comments
+
 
 @app.route("/")
 @app.route("/home")
 def home():
-    cryptos = mongo.db.cryptos.find()
+    cryptos = cryptos_coll.find()
     return render_template("home.html", cryptos=cryptos)
 
 

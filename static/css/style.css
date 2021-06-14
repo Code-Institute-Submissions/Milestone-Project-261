@@ -4,12 +4,15 @@
 
 body,html {
   height: 100%;
+  padding-top: 60px; 
+  background-color: #FFFAFA;
+  font-family: "Oswald", sans-serif;
 }
 
 
 /* ---------------------------------------------Heading */
+
 .navbar-brand {
-	font-family: "Oswald", sans-serif;
 	font-weight: 500;
     font-size: 25px;
     letter-spacing: 1px;
@@ -17,7 +20,6 @@ body,html {
 }
 
 .nav-link {
-	font-family: "Oswald", sans-serif;
 	font-weight: 300;
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -26,4 +28,46 @@ body,html {
 
 .fixed-top {
 	position: fixed;
+}
+
+
+/* ---------------------------------------------Crypto List */
+/* https://www.bootdey.com/snippets/view/General-Search-Results */
+
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 55%;
+    margin: auto;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+
+.table-responsive{
+    overflow-x:visible;
+}
+
+.table-content .crypto-icon img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+.table-icon {
+    width: 160px;
 }
