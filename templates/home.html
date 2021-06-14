@@ -1,4 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
+    {% for crypto in cryptos %}
+        {{ crypto.crypto_name }}<br>
+        {{ crypto.crypto_logo }}<br>
+        {{ crypto.market_name }}<br>
+        {{ crypto.website }}<br>
+    {% endfor %}
+
 {% endblock %}

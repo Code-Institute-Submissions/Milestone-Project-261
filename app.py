@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    cryptos = mongo.db.cryptos.find()
+    return render_template("home.html", cryptos=cryptos)
 
 
 if __name__ == "__main__":
