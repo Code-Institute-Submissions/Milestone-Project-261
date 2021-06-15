@@ -21,7 +21,7 @@ The purpose of the website is to allow users to browse and comment on Cryptocurr
 <br>
 Disclaimer: This website is for educational purposes only , this is not financial advise.
 
-Milestone Project 3 link
+https://coinhold-ms3.herokuapp.com/
 <br>
 <br>
 
