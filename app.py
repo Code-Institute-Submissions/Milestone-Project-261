@@ -22,10 +22,10 @@ comments_coll = mongo.db.comments
 
 
 @app.route("/")
-@app.route("/home")
-def home():
+@app.route("/index")
+def index():
     cryptos = cryptos_coll.find()
-    return render_template("home.html", cryptos=cryptos)
+    return render_template("index.html", cryptos=cryptos)
 
 
 if __name__ == "__main__":
