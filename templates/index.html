@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <section id="home">
     <div class="row justify-content-md-center">
         <div class="col col-lg-7">
@@ -36,61 +37,60 @@
         <div class="col-12">
             <div class="card card-margin">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="table-responsive table-hover table-margin-top">
-                            <table class="table table-content">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Name</th>
-                                        <th class="table-collapsible">Founded</th>
-                                        <th class="table-collapsible">Website</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for crypto in cryptos %}
-                                    <tr>
-                                        <td class="table-icon">
-                                            <div class="crypto-icon">
-                                                <a href="#">
-                                                    <img src="{{ crypto.crypto_logo }}" alt="icon">
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="crypto-name">
-                                                <a href="#">
-                                                    <h2>{{ crypto.market_name }}</h2>
-                                                    <h4>{{ crypto.crypto_name }}</h4>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="table-collapsible">
-                                            <div class="crypto-founded">
-                                                <h5>{{ crypto.founded }}</h5>
-                                            </div>
-                                        </td>
-                                        <td class="table-collapsible">
-                                            <div class="crypto-website">
-                                                <a href="{{ crypto.url}}" target="_blank" rel="noopener noreferrer">
-                                                    <h5>{{ crypto.website }}</h5>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="crypto-favourite">
-                                                <button type="button" class="favourite-button" data-toggle="#"
-                                                    data-target="#">
-                                                    <i class="far fa-star"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive table-hover">
+                        <table class="table table-content">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"><b>Coin</b></th>
+                                    <th class="table-collapsible"><b>Founded</b></th>
+                                    <th class="table-collapsible"><b>Website</b></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for crypto in cryptos %}
+                                <tr>
+                                    <td class="table-icon">
+                                        <div class="crypto-icon">
+                                            <a href="#">
+                                                <img src="{{ crypto.crypto_logo }}" alt="icon">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="crypto-name">
+                                            <a href="#">
+                                                <h3>{{ crypto.market_name }}</h3>
+                                                <h5>{{ crypto.crypto_name }}</h5>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="table-collapsible">
+                                        <div class="crypto-founded">
+                                            <h6>{{ crypto.founded }}</h6>
+                                        </div>
+                                    </td>
+                                    <td class="table-collapsible">
+                                        <div class="crypto-website">
+                                            <a href="{{ crypto.url}}" target="_blank" rel="noopener noreferrer">
+                                                <h6>{{ crypto.website }}</h6>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="crypto-favourite">
+                                            <button type="button" class="favourite-button" data-toggle="#"
+                                                data-target="#">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 </section>
 
 {% endblock %}
