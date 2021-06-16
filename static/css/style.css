@@ -79,7 +79,7 @@ body,html {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    max-width: 55%;
+    max-width: 1050px;
     margin: auto;
     word-wrap: break-word;
     background-color: #ffffff;
@@ -112,6 +112,14 @@ body,html {
 
 .table-icon {
     width: 160px;
+}
+
+.table-website {
+    width: 250px;
+}
+
+.table-favourite {
+    width: 90px;
 }
 
 .favourite-button {
