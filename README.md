@@ -55,9 +55,17 @@ As a admin user I want to:
 ### Design
 
 #### Colour Scheme
-
+Off White - Background colour, this is because it contrasts well with white and black.
+<br>
+White -  Background colour of cryptocurrency content and log in/register forms, this is because it contrasts well with off white.
+<br>
+Black - Navigation bar and body text, this is because it contrasts well with snow.
+<br>
+Gold - Navigation bar and buttons, this is because it contrasts well with black.
+<br>
 #### Typography
-
+Oswald - This font will be used throughout the whole webpage, this is because it looks clean, professional and is easy to read.
+<br>
 #### Wireframes
 To see the wireframes for all pages on both desktop and mobile view please click the below link.
 <br>
