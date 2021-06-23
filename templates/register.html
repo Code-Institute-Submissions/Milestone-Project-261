@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <form method="POST" action="{{ url_for('register') }}"></form>
+    <div class="col-12">
+        <div class="card-registration">
+            <div class="register-header">Register To Continue</div>
+            <div class="welcome-text">Welcome to CoinHold</div>
+            <div class="row">
+                <div class="input-field col-9">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col-9">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <div class="register-row">
+            <button class="register-button col-9">Register</button>
+            </div>
+            <div class="registered-text">Already registered? <a href="#" style="color:#DAA520">Log In</a></div>
+        </div>
+    </div>
+    </form>
+</div>
+
+{% endblock %}

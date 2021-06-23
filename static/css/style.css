@@ -16,7 +16,7 @@ body,html {
 	font-weight: 500;
     font-size: 25px;
     letter-spacing: 1px;
-    color: #FFD700 !important;
+    color: #DAA520 !important;
 }
 
 .nav-link {
@@ -54,7 +54,7 @@ body,html {
     padding-left: 0px;
 }
 
-.register-button {
+.register-now-button {
 	font-size: 16px;
     border-radius: 8px;
     letter-spacing: 0.5px;
@@ -62,7 +62,7 @@ body,html {
 	width: 160px;
 	height: 40px;
 	display: block;
-    background: #FFD700;
+    background: #DAA520;
     border: 0;
 }
 
@@ -143,4 +143,70 @@ body,html {
    background: none;
    border: none;
    font-size: 17px;
+}
+
+
+/* ---------------------------------------------Registration Page */
+
+.card-registration {
+    position: relative;
+    max-width: 450px;
+    margin: auto;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+
+.register-header {
+    font-weight: 500;
+    font-size: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.welcome-text {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.input-field {
+    margin: auto;
+    padding-top: 20px;
+}
+
+.register-button {
+	font-size: 16px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    text-align: center;
+	height: 40px;
+	display: block;
+    background: #DAA520;
+    border: 0;
+    margin: auto;
+}
+
+.register-row {
+    padding-top: 30px;
+}
+
+.registered-text {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+label.form-label{
+    font-size: 13px;
+    font-weight: 400;
 }

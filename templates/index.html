@@ -6,7 +6,9 @@
         <div class="about">
             <div class="about-header">Cryptocurrency is the Future</div>
             <div class="about-text">Share your thoughts with other investors today!</div>
-            <button class="register-button">Register Now</button>
+            <a href="{{ url_for('register') }}">
+                <button class="register-now-button">Register Now</button>
+            </a>
         </div>
     </div>
     <div class="row">
@@ -79,7 +81,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td class= "table-favourite">
+                                    <td class="table-favourite">
                                         <div class="crypto-favourite">
                                             <button type="button" class="favourite-button" data-toggle="#"
                                                 data-target="#">
