@@ -2,28 +2,29 @@
 {% block content %}
 
 <div class="row">
-    <form method="POST" action="{{ url_for('register') }}"></form>
-    <div class="col-12">
+    <form class="col-12" method="POST" action="{{ url_for('register') }}">
         <div class="card-registration">
             <div class="register-login-header">Register</div>
             <div class="row">
                 <div class="input-field col-9">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
+                    <input type="text" class="form-control" id="username" name="username" type="text" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col-9">
                     <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="password" name="password" required>
+                    <input type="password" class="form-control" id="password" name="password" type="password" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
             </div>
             <div class="register-login-row">
-                <button class="register-login-button col-9">Register</button>
+                <button type="submit" class="register-login-button col-9">Register</button>
             </div>
-            <div class="register-login-text">Already registered? <a href="{{ url_for('login') }}" style="color:#DAA520">Log In</a></div>
+            <div class="register-login-text">Already registered? <a href="{{ url_for('login') }}"
+                    style="color:#DAA520">Log In</a></div>
         </div>
-    </div>
     </form>
 </div>
 

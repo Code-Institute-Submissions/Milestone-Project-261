@@ -27,7 +27,7 @@ body,html {
 }
 
 .fixed-top {
-	position: fixed;
+    position: fixed;
 }
 
 
@@ -199,7 +199,26 @@ body,html {
     padding-bottom: 30px;
 }
 
-label.form-label{
+label.form-label {
     font-size: 13px;
     font-weight: 400;
+}
+
+.flashes {
+    padding-bottom: 40px;
+}
+
+.flash-background {
+    background-color: #DAA520;
+    width: 450px;
+    margin: auto;
+}
+.flash-text {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin: auto;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
