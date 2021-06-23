@@ -2,10 +2,10 @@
 {% block content %}
 
 <div class="row">
-    <form method="POST" action="{{ url_for('register') }}"></form>
+    <form method="POST" action="{{ url_for('login') }}"></form>
     <div class="col-12">
         <div class="card-registration">
-            <div class="register-login-header">Register</div>
+            <div class="register-login-header">Log In</div>
             <div class="row">
                 <div class="input-field col-9">
                     <label for="username" class="form-label">Username</label>
@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div class="register-login-row">
-                <button class="register-login-button col-9">Register</button>
+                <button class="register-login-button col-9">Log In</button>
             </div>
-            <div class="register-login-text">Already registered? <a href="{{ url_for('login') }}" style="color:#DAA520">Log In</a></div>
+            <div class="register-login-text">Don't have an account? <a href="{{ url_for('register') }}" style="color:#DAA520">Register</a></div>
         </div>
     </div>
     </form>
