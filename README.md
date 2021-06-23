@@ -20,6 +20,8 @@ The purpose of the website is to allow users to browse and comment on Cryptocurr
 <br>
 <br>
 Disclaimer: This website is for educational purposes only , this is not financial advise.
+<br>
+Please see below for the link to the website.
 
 https://coinhold-ms3.herokuapp.com/
 <br>
@@ -66,13 +68,13 @@ To see the wireframes for all pages on both desktop and mobile view please click
 ## Features
 
 ### Planned Features
-* The header will contain a sticky navigation bar. For unregistered users this will have 3 links which will direct you to the following pages; Browse, Log In & Sign Up. For registered users this will show links to the Browse and Watchlist page as well as a Log Out link.
+* The header will contain a sticky navigation bar. For unregistered users this will have 3 links which will direct you to the following pages; Browse, Log In & Register. For registered users this will show links to the Browse and Watchlist page as well as a Log Out link.
 * The mobile view will get rid of the navigation bar and instead have a navigation button. When clicking this button, the navigation links will appear vertically on the page. 
-* The Home page will display information about the website and have a button linking to the Browse page.
-* The Browse page will display Cryptocurrencies. Clicking on a Crypto will take you to another page displaying more information about it. Registered users will be able to submit, edit and delete their own comments.
-* The Sign Up page will allow users to register to the website.
+* The Home page will display Cryptocurrencies and a register button for unregistered users. Clicking on a Crypto will take you to another page displaying more information about it. Registered users will be able to submit, edit and delete their own comments.
+* The Register page will allow users to register to the website.
 * The Log In page will allow registered users to log in to the website.
 * The Watchlist page will allow registered users to create their own Watchlist of cryptocurrencies.
+* The Log Out page will allow registered users to log out of the website.
 
 
 ## Technologies
