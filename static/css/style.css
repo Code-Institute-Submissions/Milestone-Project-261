@@ -9,6 +9,9 @@ body,html {
   font-family: "Oswald", sans-serif;
 }
 
+.row {
+    width: 100%;
+}
 
 /* ---------------------------------------------Heading */
 
