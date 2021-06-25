@@ -1,45 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section id="home">
+<section id="watchlist">
     <div class="row">
         <div class="header-section">
-            <div class="page-header">Cryptocurrency is the Future</div>
-            <div class="page-text">Share your thoughts with other investors today!</div>
-            {% if session.user %}
-            <a href="{{ url_for('watchlist') }}">
-                <button class="header-button">Watchlist</button>
+            <div class="page-header">My Watchlist</div>
+            <div class="page-text">Create a list of your favourite cryptocurrencies!</div>
+            <a href="{{ url_for('index') }}">
+                <button class="header-button">Add New Coin</button>
             </a>
-            {% else %}
-            <a href="{{ url_for('register') }}">
-                <button class="header-button">Register Now</button>
-            </a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 card-margin">
-            <div class="card search-form">
-                <div class="card-body p-0">
-                    <form action="#" method="post" id="search-form">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row no-gutters">
-                                    <div class="col-10 p-0">
-                                        <input type="text" placeholder="Search" class="form-control" id="search"
-                                            name="search" required>
-                                    </div>
-                                    <div class="col-2 p-0">
-                                        <button type="submit" class="search-button">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
     <div class="row">
@@ -89,8 +58,7 @@
                                     </td>
                                     <td class="table-favourite">
                                         <div class="crypto-favourite">
-                                            <button type="button" class="favourite-button" data-toggle="modal"
-                                                data-target="#WatchModal">
+                                            <button type="button" class="favourite-button">
                                                 <i class="far fa-star"></i>
                                             </button>
                                         </div>
@@ -100,27 +68,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="modal fade" id="WatchModal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header text-center">
-                                    <div class="modal-title">Please log in or register to add to watchlist</div>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body modal-buttons">
-                                    <a href="{{ url_for('login') }}">
-                                        <button class="modal-button">Login</button>
-                                    </a>
-                                    <a href="{{ url_for('register') }}">
-                                        <button class="modal-button">Register</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 </section>
 
 {% endblock %}

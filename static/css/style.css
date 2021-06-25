@@ -33,23 +33,20 @@ body,html {
     position: fixed;
 }
 
-
-/* ---------------------------------------------Home Page */
-
-.about {
+.header-section {
     width: 1050px;
     margin: auto;
     padding-bottom: 50px;
 }
 
-.about-header {
+.page-header {
     font-weight: 600;
     font-size: 55px;
     letter-spacing: 1px;
     padding-bottom: 15px;
 }
 
-.about-text {
+.page-text {
 	font-weight: 300;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -57,7 +54,7 @@ body,html {
     padding-left: 0px;
 }
 
-.register-now-button {
+.header-button {
 	font-size: 16px;
     border-radius: 8px;
     letter-spacing: 0.5px;
@@ -68,6 +65,9 @@ body,html {
     background: #DAA520;
     border: 0;
 }
+
+
+/* ---------------------------------------------Home Page */
 
 /* https://www.bootdey.com/snippets/view/General-Search-Results */
 
@@ -252,3 +252,6 @@ label.form-label {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+
+/* ---------------------------------------------Watchlist Page */
