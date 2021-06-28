@@ -26,7 +26,16 @@ comments_coll = mongo.db.comments
 @app.route("/index")
 def index():
     cryptos = cryptos_coll.find()
-    return render_template("index.html", cryptos=cryptos)
+    if 'user' in session:
+        username = users_coll.find_one(
+            {"username": session["user"]})
+        watched_cryptos = username["watched_cryptos"]
+        return render_template("index.html",
+                               cryptos=cryptos,
+                               watched_cryptos=watched_cryptos)
+    else:
+        return render_template("index.html",
+                               cryptos=cryptos)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -43,7 +52,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "watchlist": []
+            "watched_cryptos": []
         }
 
         users_coll.insert_one(register)
@@ -90,7 +99,20 @@ def logout():
 
 @app.route("/watchlist")
 def watchlist():
-    return render_template("watchlist.html")
+    if "user" in session:
+        username = users_coll.find_one(
+            {"username": session["user"]})
+        watched_cryptos = []
+        for crypto in username["watched_cryptos"]:
+            watched_cryptos_list = cryptos_coll.find_one({
+                "_id": ObjectId(crypto)})
+            watched_cryptos.append(watched_cryptos_list)
+        if session["user"]:
+            return render_template("watchlist.html",
+                                   username=username,
+                                   watched_cryptos=watched_cryptos)
+    else:
+        return redirect(url_for("watchlist.html"))
 
 
 if __name__ == "__main__":
