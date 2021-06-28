@@ -99,6 +99,7 @@ def logout():
 
 @app.route("/watchlist")
 def watchlist():
+    # get user watchlist
     if "user" in session:
         username = users_coll.find_one(
             {"username": session["user"]})
@@ -117,12 +118,28 @@ def watchlist():
 
 @app.route("/add_watchlist/<crypto_id>/<url>")
 def add_watchlist(crypto_id, url):
+    # add to user watchlist
     if "user" in session:
         users_coll.find_one_and_update(
             {"username": session["user"]},
             {"$push": {"watched_cryptos": ObjectId(crypto_id)}})
         return redirect(url_for("index"))
 
+
+@app.route("/remove_watchlist/<crypto_id>/<url>")
+def remove_watchlist(crypto_id, url):
+    # remove from user watchlist
+    if "user" in session:
+        username = users_coll.find_one(
+            {"username": session["user"]})["username"]
+        users_coll.find_one_and_update(
+            {"username": session["user"]},
+            {"$pull": {"watched_cryptos": ObjectId(crypto_id)}})
+        if url == "index":
+            return redirect(url_for("index"))
+        else:
+            return redirect(url_for("watchlist", username=username))
+        
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -92,7 +92,7 @@
                                         {% if session.user %}
                                             {% if crypto._id in watched_cryptos %}
                                                 <div class="crypto-favourite">
-                                                    <a href="#" class="favourite-button">
+                                                    <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='index') }}" class="favourite-button">
                                                         <i class="fas fa-star"></i>
                                                     </a>
                                                 </div>

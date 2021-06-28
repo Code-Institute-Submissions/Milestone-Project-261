@@ -58,7 +58,7 @@
                                     </td>
                                     <td class="table-favourite">
                                         <div class="crypto-favourite">
-                                            <a class="favourite-button">
+                                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='watchlist') }}" class="favourite-button">
                                                 <i class="fas fa-star"></i>
                                             </a>
                                         </div>
