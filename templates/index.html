@@ -89,12 +89,27 @@
                                         </div>
                                     </td>
                                     <td class="table-favourite">
+                                        {% if session.user %}
+                                            {% if crypto._id in watched_cryptos %}
+                                                <div class="crypto-favourite">
+                                                    <a href="#" class="favourite-button">
+                                                        <i class="fas fa-star"></i>
+                                                    </a>
+                                                </div>
+                                            {% else %}
+                                                <div class="crypto-not-favourite">
+                                                    <a href="{{ url_for('add_watchlist', crypto_id=crypto._id, url='index') }}" class="not-favourite-button">
+                                                        <i class="far fa-star"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
                                         <div class="crypto-favourite">
-                                            <button type="button" class="favourite-button" data-toggle="modal"
-                                                data-target="#WatchModal">
+                                            <button type="button" class="not-favourite-button" data-toggle="modal" data-target="#WatchModal">
                                                 <i class="far fa-star"></i>
                                             </button>
                                         </div>
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 {% endfor %}

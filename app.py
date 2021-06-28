@@ -115,6 +115,15 @@ def watchlist():
         return redirect(url_for("watchlist.html"))
 
 
+@app.route("/add_watchlist/<crypto_id>/<url>")
+def add_watchlist(crypto_id, url):
+    if "user" in session:
+        users_coll.find_one_and_update(
+            {"username": session["user"]},
+            {"$push": {"watched_cryptos": ObjectId(crypto_id)}})
+        return redirect(url_for("index"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

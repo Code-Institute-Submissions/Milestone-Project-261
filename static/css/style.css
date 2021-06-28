@@ -142,10 +142,17 @@ body,html {
     width: 90px;
 }
 
+.not-favourite-button {
+   background: none;
+   border: none;
+   font-size: 17px;
+}
+
 .favourite-button {
    background: none;
    border: none;
    font-size: 17px;
+   color: #DAA520 !important;
 }
 
 .modal-title {

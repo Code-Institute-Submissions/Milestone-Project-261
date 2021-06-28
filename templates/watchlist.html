@@ -27,7 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for crypto in cryptos %}
+                                {% for crypto in watched_cryptos %}
                                 <tr>
                                     <td class="table-icon">
                                         <div class="crypto-icon">
@@ -58,9 +58,9 @@
                                     </td>
                                     <td class="table-favourite">
                                         <div class="crypto-favourite">
-                                            <button type="button" class="favourite-button">
-                                                <i class="far fa-star"></i>
-                                            </button>
+                                            <a class="favourite-button">
+                                                <i class="fas fa-star"></i>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
