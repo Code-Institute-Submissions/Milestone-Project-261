@@ -262,3 +262,18 @@ label.form-label {
 
 
 /* ---------------------------------------------Watchlist Page */
+
+.empty-watchlist {
+    text-align: center;
+}
+
+.no-coins-text {
+    padding-top: 20px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.add-coin-text {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}

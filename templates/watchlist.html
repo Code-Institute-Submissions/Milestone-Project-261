@@ -15,6 +15,7 @@
         <div class="col-12">
             <div class="card card-margin">
                 <div class="card-body">
+                    {% if watched_cryptos|length > 0 %}
                     <div class="table-responsive table-hover">
                         <table class="table table-content">
                             <thead>
@@ -58,7 +59,8 @@
                                     </td>
                                     <td class="table-favourite">
                                         <div class="crypto-favourite">
-                                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='watchlist') }}" class="favourite-button">
+                                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='watchlist') }}"
+                                                class="favourite-button">
                                                 <i class="fas fa-star"></i>
                                             </a>
                                         </div>
@@ -68,6 +70,13 @@
                             </tbody>
                         </table>
                     </div>
+                    {% else %}
+                    <div class="empty-watchlist">
+                        <div class="no-coins-text">You do not have any favourite coins yet</div>
+                        <a class="add-coin-text" href="{{ url_for('index') }}" style="color:#DAA520">Add a new coin to
+                            get started!</a>
+                    </div>
+                    {% endif %}
 </section>
 
 {% endblock %}
