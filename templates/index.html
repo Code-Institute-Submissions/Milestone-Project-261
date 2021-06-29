@@ -22,15 +22,18 @@
         <div class="col-12 card-margin">
             <div class="card search-form">
                 <div class="card-body p-0">
-                    <form action="#" method="post" id="search-form">
+                    <form action="{{ url_for('search') }}" method="post">
                         <div class="row">
                             <div class="col-12">
                                 <div class="row no-gutters">
-                                    <div class="col-10 p-0">
-                                        <input type="text" placeholder="Search" class="form-control" id="search"
-                                            name="search" required>
+                                    <div class="col-10">
+                                        <input type="text" placeholder="Search" class="form-control" name="query"
+                                            id="query" minlength="3" required>
                                     </div>
-                                    <div class="col-2 p-0">
+                                    <div class="search-refresh-button">
+                                        <a class="refresh-button" href="{{ url_for('index') }}" style="color:#000000">
+                                            <i class="fas fa-redo"></i>
+                                        </a>
                                         <button type="submit" class="search-button">
                                             <i class="fas fa-search"></i>
                                         </button>
@@ -47,6 +50,7 @@
         <div class="col-12">
             <div class="card card-margin">
                 <div class="card-body">
+                    {% if cryptos|length > 0 %}
                     <div class="table-responsive table-hover">
                         <table class="table table-content">
                             <thead>
@@ -90,22 +94,25 @@
                                     </td>
                                     <td class="table-favourite">
                                         {% if session.user %}
-                                            {% if crypto._id in watched_cryptos %}
-                                                <div class="crypto-favourite">
-                                                    <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='index') }}" class="favourite-button">
-                                                        <i class="fas fa-star"></i>
-                                                    </a>
-                                                </div>
-                                            {% else %}
-                                                <div class="crypto-not-favourite">
-                                                    <a href="{{ url_for('add_watchlist', crypto_id=crypto._id, url='index') }}" class="not-favourite-button">
-                                                        <i class="far fa-star"></i>
-                                                    </a>
-                                                </div>
-                                            {% endif %}
+                                        {% if crypto._id in watched_cryptos %}
+                                        <div class="crypto-favourite">
+                                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='index') }}"
+                                                class="favourite-button">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </div>
+                                        {% else %}
+                                        <div class="crypto-not-favourite">
+                                            <a href="{{ url_for('add_watchlist', crypto_id=crypto._id, url='index') }}"
+                                                class="not-favourite-button">
+                                                <i class="far fa-star"></i>
+                                            </a>
+                                        </div>
+                                        {% endif %}
                                         {% else %}
                                         <div class="crypto-favourite">
-                                            <button type="button" class="not-favourite-button" data-toggle="modal" data-target="#WatchModal">
+                                            <button type="button" class="not-favourite-button" data-toggle="modal"
+                                                data-target="#WatchModal">
                                                 <i class="far fa-star"></i>
                                             </button>
                                         </div>
@@ -116,6 +123,9 @@
                             </tbody>
                         </table>
                     </div>
+                    {% else %}
+                    <div class="no-results-found">No results found</div>
+                    {% endif %}
                     <!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
                     <div class="modal fade" id="WatchModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">

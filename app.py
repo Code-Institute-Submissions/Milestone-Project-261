@@ -25,7 +25,23 @@ comments_coll = mongo.db.comments
 @app.route("/")
 @app.route("/index")
 def index():
-    cryptos = cryptos_coll.find()
+    cryptos = list(cryptos_coll.find())
+    if 'user' in session:
+        username = users_coll.find_one(
+            {"username": session["user"]})
+        watched_cryptos = username["watched_cryptos"]
+        return render_template("index.html",
+                               cryptos=cryptos,
+                               watched_cryptos=watched_cryptos)
+    else:
+        return render_template("index.html",
+                               cryptos=cryptos)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    cryptos = list(mongo.db.cryptos.find({"$text": {"$search": query}}))
     if 'user' in session:
         username = users_coll.find_one(
             {"username": session["user"]})
