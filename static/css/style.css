@@ -335,4 +335,12 @@ label.form-label {
 .crypto-about {
     margin-left: 20px;
     margin-right: 20px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.crypto-info {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 15px;
 }
