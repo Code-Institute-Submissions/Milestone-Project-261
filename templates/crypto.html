@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="crypto">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-margin">
+                <div class="crypto-card-body">
+                    <div class="get-crypto-icon">
+                        <img src="{{ crypto.crypto_logo }}" alt="icon">
+                    </div>
+                    <div class="get-crypto-name">
+                        <div class="crypto-name">{{ crypto.crypto_name }} ({{ crypto.market_name }})</div>
+                    </div>
+                    <div class="get-crypto-favourite">
+                        <div class="crypto-favourite">
+                            <a href="#" class="favourite-button">
+                                <i class="fas fa-star"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="get-crypto-about">
+                        <div class="crypto-about">{{ crypto.crypto_about }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

@@ -155,7 +155,14 @@ def remove_watchlist(crypto_id, url):
             return redirect(url_for("index"))
         else:
             return redirect(url_for("watchlist", username=username))
-        
+
+
+@app.route("/get_crypto/<crypto_id>")
+def get_crypto(crypto_id):
+    crypto = cryptos_coll.find_one({"_id": ObjectId(crypto_id)})
+    return render_template("crypto.html",
+                               crypto=crypto)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

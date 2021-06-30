@@ -32,14 +32,14 @@
                                 <tr>
                                     <td class="table-icon">
                                         <div class="crypto-icon">
-                                            <a href="#">
+                                            <a href="{{ url_for('get_crypto', crypto_id=crypto._id) }}">
                                                 <img src="{{ crypto.crypto_logo }}" alt="icon">
                                             </a>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="crypto-name">
-                                            <a href="#">
+                                            <a href="{{ url_for('get_crypto', crypto_id=crypto._id) }}">
                                                 <h3>{{ crypto.market_name }}</h3>
                                                 <h5>{{ crypto.crypto_name }}</h5>
                                             </a>
