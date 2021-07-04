@@ -87,10 +87,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
                     "index", username=session["user"]))
             else:
                 # invalid password match
@@ -139,7 +139,11 @@ def add_watchlist(crypto_id, url):
         users_coll.find_one_and_update(
             {"username": session["user"]},
             {"$push": {"watched_cryptos": ObjectId(crypto_id)}})
-        return redirect(url_for("index"))
+        if url == "index":
+            return redirect(url_for("index"))
+        else:
+            return redirect(url_for("get_crypto",
+                                    crypto_id=crypto_id))
 
 
 @app.route("/remove_watchlist/<crypto_id>/<url>")
@@ -153,14 +157,25 @@ def remove_watchlist(crypto_id, url):
             {"$pull": {"watched_cryptos": ObjectId(crypto_id)}})
         if url == "index":
             return redirect(url_for("index"))
-        else:
+        elif url == "watchlist":
             return redirect(url_for("watchlist", username=username))
+        else:
+            return redirect(url_for("get_crypto",
+                                    crypto_id=crypto_id))
 
 
 @app.route("/get_crypto/<crypto_id>")
 def get_crypto(crypto_id):
     crypto = cryptos_coll.find_one({"_id": ObjectId(crypto_id)})
-    return render_template("crypto.html",
+    if 'user' in session:
+        username = users_coll.find_one(
+            {"username": session["user"]})
+        watched_cryptos = username["watched_cryptos"]
+        return render_template("crypto.html",
+                               crypto=crypto,
+                               watched_cryptos=watched_cryptos)
+    else:
+        return render_template("crypto.html",
                                crypto=crypto)
 
 

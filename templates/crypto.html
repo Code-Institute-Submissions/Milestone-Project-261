@@ -12,10 +12,48 @@
                         <div class="crypto-name">{{ crypto.crypto_name }} ({{ crypto.market_name }})</div>
                     </div>
                     <div class="get-crypto-favourite">
+                        {% if session.user %}
+                        {% if crypto._id in watched_cryptos %}      
                         <div class="crypto-favourite">
-                            <a href="#" class="favourite-button">
+                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='crypto') }}" class="favourite-button">
                                 <i class="fas fa-star"></i>
                             </a>
+                        </div>
+                        {% else %}
+                        <div class="crypto-not-favourite">
+                            <a href="{{ url_for('add_watchlist', crypto_id=crypto._id, url='crypto') }}"
+                                class="not-favourite-button">
+                                <i class="far fa-star"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% else %}
+                        <div class="crypto-favourite">
+                            <button type="button" class="not-favourite-button" data-toggle="modal"
+                                data-target="#WatchModal">
+                                <i class="far fa-star"></i>
+                            </button>
+                        </div>
+                        {% endif %}
+                        <div class="modal fade" id="WatchModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <div class="modal-title">Please log in or register to add to watchlist</div>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body modal-buttons">
+                                        <a href="{{ url_for('login') }}">
+                                            <button class="modal-button">Login</button>
+                                        </a>
+                                        <a href="{{ url_for('register') }}">
+                                            <button class="modal-button">Register</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="get-crypto-about">
