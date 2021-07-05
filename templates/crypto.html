@@ -13,9 +13,10 @@
                     </div>
                     <div class="get-crypto-favourite">
                         {% if session.user %}
-                        {% if crypto._id in watched_cryptos %}      
+                        {% if crypto._id in watched_cryptos %}
                         <div class="crypto-favourite">
-                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='crypto') }}" class="favourite-button">
+                            <a href="{{ url_for('remove_watchlist', crypto_id=crypto._id, url='crypto') }}"
+                                class="favourite-button">
                                 <i class="fas fa-star"></i>
                             </a>
                         </div>
@@ -61,6 +62,29 @@
                         <div class="crypto-info">To see the current price of {{ crypto.crypto_name }} visit <a
                                 href="{{ crypto.info }}" style="color:#DAA520" target="_blank"
                                 rel="noopener noreferrer">here</a></div>
+                    </div>
+                    <div class="comments-form">
+                        {% if session.user %}
+                        <form class="crypto-comment" method="POST" action="#">
+                            <div class="form-group">
+                                <textarea class="form-control comment-input" name="crypto-comment" rows="3"
+                                    placeholder="What are your thoughts?" required></textarea>
+                            </div>
+                            <button type="submit" class="comment-button">Comment</button>
+                        </form>
+                        {% else %}
+                        <div class="login-comment">
+                            <div class="login-comment-text">Please log in or register to leave a comment</div>
+                            <div class="login-comment-buttons">
+                                <a href="{{ url_for('login') }}">
+                                    <button class="login-comment-button">Login</button>
+                                </a>
+                                <a href="{{ url_for('register') }}">
+                                    <button class="login-comment-button">Register</button>
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

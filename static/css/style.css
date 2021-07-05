@@ -342,4 +342,55 @@ label.form-label {
     margin-left: 20px;
     margin-top: 10px;
     font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.comments-form {
+    margin-left: 20px;
+    margin-right: 20px; 
+}
+
+.comment-input {
+    font-size: 15px;
+}
+
+.comment-button {
+	font-size: 13px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    text-align: center;
+	width: 70px;
+	height: 30px;
+	display: block;
+    background: #DAA520;
+    border: 0;
+    float: right;
+}
+
+.login-comment {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.login-comment-text {
+    text-align: center;
+    padding-top: 6px;
+}
+
+.login-comment-buttons {
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+
+.login-comment-button {
+	font-size: 13px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    text-align: center;
+	width: 70px;
+	height: 30px;
+    background: #DAA520;
+    border: 0;
+    margin: 0px 3px;
 }
