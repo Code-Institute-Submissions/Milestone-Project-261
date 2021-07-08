@@ -25,7 +25,9 @@ comments_coll = mongo.db.comments
 @app.route("/")
 @app.route("/index")
 def index():
+    # list all cryptos
     cryptos = list(cryptos_coll.find())
+    # show watched cryptos
     if 'user' in session:
         username = users_coll.find_one(
             {"username": session["user"]})
@@ -40,8 +42,10 @@ def index():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    # search query in cryptos collection
     query = request.form.get("query")
     cryptos = list(mongo.db.cryptos.find({"$text": {"$search": query}}))
+    # show watched cryptos
     if 'user' in session:
         username = users_coll.find_one(
             {"username": session["user"]})
@@ -166,17 +170,54 @@ def remove_watchlist(crypto_id, url):
 
 @app.route("/get_crypto/<crypto_id>")
 def get_crypto(crypto_id):
+    # get the crypto using the crypto id
     crypto = cryptos_coll.find_one({"_id": ObjectId(crypto_id)})
+    comments = []
+    # loop through the crypto comments
+    for comment in crypto["comments"]:
+        crypto_comments = comments_coll.find_one({"_id": ObjectId(comment)})
+        comments.append(crypto_comments)
+    # find if crypto is apart of watchlist
     if 'user' in session:
         username = users_coll.find_one(
             {"username": session["user"]})
         watched_cryptos = username["watched_cryptos"]
         return render_template("crypto.html",
                                crypto=crypto,
-                               watched_cryptos=watched_cryptos)
+                               watched_cryptos=watched_cryptos,
+                               comments=comments)
     else:
         return render_template("crypto.html",
-                               crypto=crypto)
+                               crypto=crypto,
+                               comments=comments)
+
+
+@app.route("/add_comment/<crypto_id>", methods=["POST"])
+def add_comment(crypto_id):
+    # add comment to the crypto page
+    if "user" in session:
+        new_comment = {
+            "username": session["user"],
+            "comment": request.form.get("crypto-comment")
+        }
+        # add comment to the comments collection
+        insert_comment = comments_coll.insert_one(new_comment)
+        # add comment to the crypto's comments array
+        cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
+                               {"$push":
+                                   {"comments":
+                                       {"$each": [insert_comment.inserted_id],
+                                        "$position": 0
+                                        }
+                                    }
+                                }
+                               )
+        flash("Thank you for commenting")
+        return redirect(url_for("get_crypto",
+                                crypto_id=crypto_id))
+    else:
+        return redirect(url_for("get_crypto",
+                                crypto_id=crypto_id))
 
 
 if __name__ == "__main__":

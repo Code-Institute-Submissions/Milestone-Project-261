@@ -65,7 +65,7 @@
                     </div>
                     <div class="comments-form">
                         {% if session.user %}
-                        <form class="crypto-comment" method="POST" action="#">
+                        <form class="crypto-comment" method="POST" action="{{ url_for('add_comment', crypto_id=crypto._id) }}">
                             <div class="form-group">
                                 <textarea class="form-control comment-input" name="crypto-comment" rows="3"
                                     placeholder="What are your thoughts?" required></textarea>
@@ -89,5 +89,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-margin comment-card">
+                <div class="comment-card-body">
+                    {% for comment in comments %}
+                        {{ comment.username}}
+                        {{ comment.comment }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}
