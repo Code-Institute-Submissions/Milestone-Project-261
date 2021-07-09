@@ -403,3 +403,43 @@ label.form-label {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.comments-header {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.comments-line {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-top: 1px solid #ced4da;
+}
+
+.comment-username {
+    margin: 20px 20px 10px 20px;
+    display: block;
+    font-size: 13px;
+}
+
+.comment-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.edit-comment {
+    font-size: 12px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.delete-comment {
+    font-size: 12px;
+    float:right;
+    margin-right: 20px;
+    margin-top: 5px;
+}
