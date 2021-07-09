@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -196,8 +197,11 @@ def get_crypto(crypto_id):
 def add_comment(crypto_id):
     # add comment to the crypto page
     if "user" in session:
+        # https://www.programiz.com/python-programming/datetime/strftime
+        date_added = datetime.today().strftime("%d/%m/%Y, %H:%M")
         new_comment = {
             "username": session["user"],
+            "comment_date": date_added,
             "comment": request.form.get("crypto-comment")
         }
         # add comment to the comments collection

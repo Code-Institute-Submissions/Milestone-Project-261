@@ -400,26 +400,32 @@ label.form-label {
 }
 
 .comment-card-body {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .comments-header {
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
 }
 
-.comments-line {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    border-top: 1px solid #ced4da;
+.comment-username-date {
+    margin: 10px 20px 10px 20px;
+    font-size: 13px;
+    background-color: #DAA520;
 }
 
 .comment-username {
-    margin: 20px 20px 10px 20px;
-    display: block;
-    font-size: 13px;
+    margin-left: 3px;
+    display: inline-block
+}
+
+.comment-date {
+    font-size: 12px;
+    float: right;
+    margin-right: 3px;
 }
 
 .comment-text {
@@ -442,4 +448,8 @@ label.form-label {
     float:right;
     margin-right: 20px;
     margin-top: 5px;
+}
+
+.comment-space {
+    margin-bottom: 50px;
 }

@@ -95,20 +95,22 @@
         <div class="col-12">
             <div class="card card-margin comment-card">
                 <div class="comment-card-body">
-                    <div class="comments-header">Comments</div>
-                    <hr class="comments-line">
-                    </hr>
-                {% for comment in comments %}
-                    <div class="comment-username">{{ comment.username }}</div>
+                    <div class="comments-header">Comments <i class="fas fa-comments-dollar"></i></div>
+                    {% for comment in comments %}
+                    <div class="comment-username-date">
+                        <div class="comment-username">{{ comment.username }}</div>
+                        <div class="comment-date">{{ comment.comment_date }}</div>
+                    </div>
                     <div class="comment-text">{{ comment.comment }}</div>
                     {% if session.user|lower == comment.username|lower %}
-                        <div class="delete-comment">Delete</div>
-                        <div class="edit-comment">Edit</div>
+                    <div class="delete-comment">Delete</div>
+                    <div class="edit-comment">Edit</div>
                     {% endif %}
-                {% endfor %}
+                    <div class="comment-space"></div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 {% endblock %}
