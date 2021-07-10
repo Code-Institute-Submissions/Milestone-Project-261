@@ -224,8 +224,9 @@ body,html {
 }
 
 .input-field {
-    margin: auto;
     padding-top: 20px;
+    width: 300px;
+    margin: auto;
 }
 
 .register-login-button {
@@ -234,6 +235,7 @@ body,html {
     letter-spacing: 0.5px;
     text-align: center;
 	height: 40px;
+    width: 300px;
 	display: block;
     background: #DAA520;
     border: 0;
@@ -525,6 +527,10 @@ label.form-label {
         display: none;
     }
 
+    td.table-icon {
+        padding-left: 5px;
+    }
+
     .get-crypto-icon {
         display: none;
     }
@@ -561,7 +567,7 @@ label.form-label {
         font-size: 12px;
     }
 
-    .comment-button {
+    .comment-button, .login-comment-button {
         font-size: 11px;
         height: 25px;
         width: 60px;
@@ -589,5 +595,56 @@ label.form-label {
 
     .edit-comment, .delete-comment {
         font-size: 11px;
+    }
+
+    .login-comment-text {
+        font-size: 12px;
+    }
+
+    .modal-title {
+        font-size: 14px;
+    }
+
+    .modal-button {
+        font-size: 13px;
+        height: 30px;
+        width: 70px;
+    }
+
+    .close {
+        padding: 0px 5px 5px 5px !important;
+    }
+
+    .register-login-header {
+        font-size: 25px;
+    }
+
+    .register-login-text {
+        font-size: 13px;
+    }
+
+    label.form-label {
+        font-size: 12px;
+    }
+
+    .input-field {
+        width: 200px;
+    }
+
+    .register-login-button {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .credentials-input {
+        font-size: 12px;
+    }
+
+    .flash-background {
+        width: 250px;
+    }
+
+    .flash-text {
+        font-size: 12px;
     }
 }

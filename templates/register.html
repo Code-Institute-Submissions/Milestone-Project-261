@@ -5,22 +5,22 @@
     <form class="col-12" method="POST" action="{{ url_for('register') }}">
         <div class="card-registration">
             <div class="register-login-header">Register</div>
-            <div class="row">
-                <div class="input-field col-9">
+            <div class="username-row">
+                <div class="input-field">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" type="text" minlength="5"
+                    <input type="text" class="form-control credentials-input" id="username" name="username" type="text" minlength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col-9">
+            <div class="password-row">
+                <div class="input-field">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" type="password" minlength="5"
+                    <input type="password" class="form-control credentials-input" id="password" name="password" type="password" minlength="5"
                         maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 </div>
             </div>
             <div class="register-login-row">
-                <button type="submit" class="register-login-button col-9">Register</button>
+                <button type="submit" class="register-login-button">Register</button>
             </div>
             <div class="register-login-text">Already registered? <a href="{{ url_for('login') }}"
                     style="color:#DAA520">Log In</a></div>
