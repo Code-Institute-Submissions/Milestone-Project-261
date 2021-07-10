@@ -103,7 +103,7 @@
                     </div>
                     <div class="comment-text">{{ comment.comment }}</div>
                     {% if session.user|lower == comment.username|lower %}
-                    <div class="delete-comment">Delete</div>
+                    <a class="delete-comment" href="{{ url_for('delete_comment', crypto_id=crypto._id, comment_id=comment._id) }}">Delete</a>
                     <div class="edit-comment">Edit</div>
                     {% endif %}
                     <div class="comment-space"></div>

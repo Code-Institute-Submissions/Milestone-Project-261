@@ -224,6 +224,33 @@ def add_comment(crypto_id):
                                 crypto_id=crypto_id))
 
 
+@app.route("/delete_comment/<crypto_id>/<comment_id>")
+def delete_comment(crypto_id, comment_id):
+    # delete comment from the crypto page
+    if "user" in session:
+        user_comment = comments_coll.find_one({"_id": ObjectId(comment_id),
+                                                "username": session["user"]})
+        # check if the comment was added by the user
+        if user_comment is None:
+            return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
+        # if comment was added by the user, remove from the comments collection
+        else:
+            if session["user"]:
+                comments_coll.remove({"_id": ObjectId(comment_id)})
+                # remove comment from crypto's comment array
+                cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
+                                       {"$pull":
+                                           {"comments": ObjectId(comment_id)}
+                                        })
+                flash("Your comment has been deleted")
+                return redirect(url_for("get_crypto",
+                                        crypto_id=crypto_id))
+    else:
+        return redirect(url_for("get_crypto",
+                                crypto_id=crypto_id))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
