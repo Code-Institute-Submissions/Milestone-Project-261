@@ -454,3 +454,140 @@ label.form-label {
 .comment-space {
     margin-bottom: 50px;
 }
+
+
+/* ---------------------------------------------Media Queries*/
+
+@media (max-width: 350px) {
+
+    .header-section {
+        width: 250px;
+        margin: auto;
+    }
+
+    .page-header {
+        font-size: 19px;
+    }
+
+    .page-text {
+        font-size: 13px;
+    }
+
+    .header-button {
+        font-size: 13px;
+        width: 120px;
+        height: 30px;
+    }
+
+    .search-form {
+        width: 200px;
+        margin: auto;
+    }
+
+    .refresh-button {
+        margin-left: 19px;
+    }
+
+    .search-button {
+        margin-left: 6px;
+        padding-right: 0;
+    }
+
+    .search-refresh-button {
+        margin-left: 0px;
+    }
+
+    .search-mobile {
+        padding: 0;
+    }
+
+    .search-form input {
+        width: 120px
+    }
+
+    .search-input {
+        font-size: 13px;
+    }
+
+    .row {
+        margin: auto;
+    }
+
+    .table-collapsible {
+        display: none;
+    }
+
+    .table-content .crypto-icon img {
+        margin-left: 0px;
+    }
+
+    th {
+        display: none;
+    }
+
+    .get-crypto-icon {
+        display: none;
+    }
+
+    .crypto-name {
+        font-size: 22px;
+        padding-left: 15px;
+        padding-bottom: 15px;
+    }
+
+    .get-crypto-favourite {
+        margin-left: 0;
+        width: 30px;
+    }
+
+    .crypto-about {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-weight: 300;
+        font-size: 12px;
+    }
+
+    .crypto-info {
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .comments-form {
+        margin-left: 15px;
+        margin-right: 15px; 
+    }
+
+    .comment-input {
+        font-size: 12px;
+    }
+
+    .comment-button {
+        font-size: 11px;
+        height: 25px;
+        width: 60px;
+    }
+
+    .comments-header {
+        font-size: 18px
+    }
+
+    .comment-text {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 12px;
+    }
+
+    .comment-username-date {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 12px;
+    }
+
+    .comment-date {
+        font-size: 11px;
+    }
+
+    .edit-comment, .delete-comment {
+        font-size: 11px;
+    }
+}

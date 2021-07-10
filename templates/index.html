@@ -24,10 +24,10 @@
                 <div class="card-body p-0">
                     <form action="{{ url_for('search') }}" method="post">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 search-mobile">
                                 <div class="row no-gutters">
-                                    <div class="col-10">
-                                        <input type="text" placeholder="Search" class="form-control" name="query"
+                                    <div class="col-lg-10 col-7">
+                                        <input type="text" placeholder="Search" class="form-control search-input" name="query"
                                             id="query" minlength="3" required>
                                     </div>
                                     <div class="search-refresh-button">
