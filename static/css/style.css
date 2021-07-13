@@ -581,7 +581,7 @@ label.form-label {
     .comment-button, .login-comment-button {
         font-size: 11px;
         height: 25px;
-        width: 60px;
+        width: 70px;
     }
 
     .comments-header {
@@ -619,7 +619,7 @@ label.form-label {
     .modal-button {
         font-size: 13px;
         height: 25px;
-        width: 60px;
+        width: 70px;
     }
 
     .close {
@@ -792,7 +792,7 @@ label.form-label {
     .comment-button, .login-comment-button {
         font-size: 12px;
         height: 25px;
-        width: 60px;
+        width: 75px;
     }
 
     .comments-header {
@@ -830,7 +830,7 @@ label.form-label {
     .modal-button {
         font-size: 13px;
         height: 25px;
-        width: 60px;
+        width: 75px;
     }
 
     .close {
@@ -1003,7 +1003,7 @@ label.form-label {
     .comment-button, .login-comment-button {
         font-size: 13px;
         height: 30px;
-        width: 65px;
+        width: 75px;
     }
 
     .comments-header {
@@ -1041,7 +1041,7 @@ label.form-label {
     .modal-button {
         font-size: 14px;
         height: 30px;
-        width: 65px;
+        width: 75px;
     }
 
     .close {
@@ -1214,7 +1214,7 @@ label.form-label {
     .comment-button, .login-comment-button {
         font-size: 14px;
         height: 30px;
-        width: 70px;
+        width: 75px;
     }
 
     .comments-header {
@@ -1252,7 +1252,7 @@ label.form-label {
     .modal-button {
         font-size: 14px;
         height: 30px;
-        width: 70px;
+        width: 75px;
     }
 
     .close {
