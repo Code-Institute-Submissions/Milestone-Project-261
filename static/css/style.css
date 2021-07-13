@@ -712,7 +712,7 @@ label.form-label {
     }
 
     .search-form input {
-        width: 120px
+        width: 170px
     }
 
     .search-input {
@@ -879,3 +879,213 @@ label.form-label {
     }
 }
 
+@media (max-width: 414px) and (min-width: 376px) {
+
+    .header-section {
+        width: 360px;
+        margin: auto;
+    }
+
+    .page-header {
+        font-size: 25px;
+    }
+
+    .page-text {
+        font-size: 14px;
+    }
+
+    .header-button {
+        font-size: 14px;
+        width: 125px;
+        height: 35px;
+    }
+
+    .search-form {
+        width: 300px;
+        margin: auto;
+    }
+
+    .refresh-button {
+        margin-left: 50px;
+    }
+
+    .search-button {
+        margin-left: 10px;
+        padding-right: 0;
+    }
+
+    .search-refresh-button {
+        margin-left: 0px;
+    }
+
+    .search-mobile {
+        padding: 0;
+    }
+
+    .search-form input {
+        width: 205px
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .row {
+        margin: auto;
+    }
+
+    .table-collapsible {
+        display: none;
+    }
+
+    .table-content .crypto-icon img {
+        margin-left: 20px;
+    }
+
+    td.crypto-name-mobile {
+        padding-left: 0;
+    }
+
+    td.table-icon {
+        padding-right: 0;
+        width: 130px;
+    }
+
+    td.table-favourite {
+        padding-left: 30px;
+    }
+
+    th {
+        display: none;
+    }
+
+    td.table-icon {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+
+    .get-crypto-icon {
+        display: none;
+    }
+
+    .crypto-name {
+        font-size: 32px;
+        padding-left: 15px;
+        padding-bottom: 15px;
+    }
+
+    .get-crypto-favourite {
+        margin-left: 0;
+        width: 30px;
+    }
+
+    .crypto-about {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .crypto-info {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+
+    .comments-form {
+        margin-left: 15px;
+        margin-right: 15px; 
+    }
+
+    .comment-input {
+        font-size: 14px;
+    }
+
+    .comment-button, .login-comment-button {
+        font-size: 13px;
+        height: 30px;
+        width: 65px;
+    }
+
+    .comments-header {
+        font-size: 23px
+    }
+
+    .comment-text {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 14px;
+    }
+
+    .comment-username-date {
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 14px;
+    }
+
+    .comment-date {
+        font-size: 13px;
+    }
+
+    .edit-comment, .delete-comment {
+        font-size: 13px;
+    }
+
+    .login-comment-text {
+        font-size: 14px;
+    }
+
+    .modal-title {
+        font-size: 17px;
+    }
+
+    .modal-button {
+        font-size: 14px;
+        height: 30px;
+        width: 65px;
+    }
+
+    .close {
+        padding: 0px 5px 5px 5px !important;
+    }
+
+    .register-login-header {
+        font-size: 28px;
+    }
+
+    .register-login-text {
+        font-size: 14px;
+    }
+
+    label.form-label {
+        font-size: 14px;
+    }
+
+    .input-field {
+        width: 250px;
+    }
+
+    .register-login-button {
+        width: 250px;
+        font-size: 15px;
+    }
+
+    .credentials-input {
+        font-size: 14px;
+    }
+
+    .flash-background {
+        width: 300px;
+    }
+
+    .flash-text {
+        font-size: 14px;
+    }
+
+    .no-coins-text {
+        font-size: 15px;
+    }
+    
+    .add-coin-text {
+        font-size: 22px;
+    }
+}
