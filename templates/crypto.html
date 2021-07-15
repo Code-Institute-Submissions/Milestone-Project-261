@@ -101,13 +101,23 @@
                         <div class="comment-username">{{ comment.username }}</div>
                         <div class="comment-date">{{ comment.comment_date }}</div>
                     </div>
-                    <div class="comment-text">{{ comment.comment }}</div>
-                    {% if session.user|lower == comment.username|lower %}
-                    <a class="delete-comment" href="{{ url_for('delete_comment', crypto_id=crypto._id, comment_id=comment._id) }}">Delete</a>
-                    <div class="edit-comment">Edit</div>
-                    {% endif %}
-                    <div class="comment-space"></div>
-                    {% endfor %}
+                    <div class="comment-text" id="comment-text-{{ comment._id }}">{{ comment.comment }}</div>
+                    <form class="edit-crypto-comment" id="edit-crypto-comment-{{ comment._id }}" method="POST"
+                        action="{{ url_for('edit_comment', crypto_id=crypto._id, comment_id=comment._id) }}">
+                        <div class="form-group">
+                            <textarea class="form-control comment-input" name="edited-comment" rows="3"
+                                required>{{ comment.comment }}</textarea>
+                        </div>
+                        <button type="submit" class="save-button">Save</button>
+                        <button type="button" class="cancel-button cancel-edit-comment">Cancel</button>
+                    </form>
+                        {% if session.user|lower == comment.username|lower %}
+                        <a class="delete-comment" id="delete-comment-{{ comment._id }}"
+                            href="{{ url_for('delete_comment', crypto_id=crypto._id, comment_id=comment._id) }}">Delete</a>
+                        <a class="edit-comment" id="{{ comment._id }}">Edit</div>
+                        {% endif %}
+                        <div class="comment-space"></div>
+                        {% endfor %}
                 </div>
             </div>
         </div>

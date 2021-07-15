@@ -42,8 +42,8 @@ def index():
 
 
 @app.route("/search", methods=["GET", "POST"])
+# search query in cryptos collection
 def search():
-    # search query in cryptos collection
     query = request.form.get("query")
     cryptos = list(mongo.db.cryptos.find({"$text": {"$search": query}}))
     # show watched cryptos
@@ -60,8 +60,8 @@ def search():
 
 
 @app.route("/register", methods=["GET", "POST"])
+# registers a new user
 def register():
-    # registers a new user
     if request.method == "POST":
         existing_user = users_coll.find_one(
             {"username": request.form.get("username").lower()})
@@ -119,8 +119,8 @@ def logout():
 
 
 @app.route("/watchlist")
+# get user watchlist
 def watchlist():
-    # get user watchlist
     if "user" in session:
         username = users_coll.find_one(
             {"username": session["user"]})
@@ -138,8 +138,8 @@ def watchlist():
 
 
 @app.route("/add_watchlist/<crypto_id>/<url>")
+# add to user watchlist
 def add_watchlist(crypto_id, url):
-    # add to user watchlist
     if "user" in session:
         users_coll.find_one_and_update(
             {"username": session["user"]},
@@ -152,8 +152,8 @@ def add_watchlist(crypto_id, url):
 
 
 @app.route("/remove_watchlist/<crypto_id>/<url>")
+# remove from user watchlist
 def remove_watchlist(crypto_id, url):
-    # remove from user watchlist
     if "user" in session:
         username = users_coll.find_one(
             {"username": session["user"]})["username"]
@@ -170,8 +170,8 @@ def remove_watchlist(crypto_id, url):
 
 
 @app.route("/get_crypto/<crypto_id>")
+# get the crypto using the crypto id
 def get_crypto(crypto_id):
-    # get the crypto using the crypto id
     crypto = cryptos_coll.find_one({"_id": ObjectId(crypto_id)})
     comments = []
     # loop through the crypto comments
@@ -194,8 +194,8 @@ def get_crypto(crypto_id):
 
 
 @app.route("/add_comment/<crypto_id>", methods=["POST"])
+# add comment to the crypto page
 def add_comment(crypto_id):
-    # add comment to the crypto page
     if "user" in session:
         # https://www.programiz.com/python-programming/datetime/strftime
         date_added = datetime.today().strftime("%d/%m/%Y, %H:%M")
@@ -208,14 +208,14 @@ def add_comment(crypto_id):
         insert_comment = comments_coll.insert_one(new_comment)
         # add comment to the crypto's comments array
         cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
-                               {"$push":
-                                   {"comments":
-                                       {"$each": [insert_comment.inserted_id],
-                                        "$position": 0
-                                        }
-                                    }
-                                }
-                               )
+                                {"$push":
+                                 {"comments":
+                                  {"$each": [insert_comment.inserted_id],
+                                   "$position": 0
+                                   }
+                                  }
+                                 }
+                                )
         flash("Thank you for commenting")
         return redirect(url_for("get_crypto",
                                 crypto_id=crypto_id))
@@ -225,11 +225,11 @@ def add_comment(crypto_id):
 
 
 @app.route("/delete_comment/<crypto_id>/<comment_id>")
+# delete comment from the crypto page
 def delete_comment(crypto_id, comment_id):
-    # delete comment from the crypto page
     if "user" in session:
         user_comment = comments_coll.find_one({"_id": ObjectId(comment_id),
-                                                "username": session["user"]})
+                                               "username": session["user"]})
         # check if the comment was added by the user
         if user_comment is None:
             return redirect(url_for("get_crypto",
@@ -240,12 +240,31 @@ def delete_comment(crypto_id, comment_id):
                 comments_coll.remove({"_id": ObjectId(comment_id)})
                 # remove comment from crypto's comment array
                 cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
-                                       {"$pull":
-                                           {"comments": ObjectId(comment_id)}
-                                        })
+                                        {"$pull":
+                                         {"comments": ObjectId(comment_id)}
+                                         })
                 flash("Your comment has been deleted")
                 return redirect(url_for("get_crypto",
                                         crypto_id=crypto_id))
+    else:
+        return redirect(url_for("get_crypto",
+                                crypto_id=crypto_id))
+
+
+@app.route("/edit_comment/<crypto_id>/<comment_id>", methods=["POST"])
+# edit a users comment
+def edit_comment(crypto_id, comment_id):
+    if "user" in session:
+        # retrieve the edited comment
+        edited_comment = request.form.get("edited-comment")
+        # update the comment in the comments collection
+        comments_coll.update_one({"_id": ObjectId(comment_id)},
+                                 {"$set":
+                                     {"comment": edited_comment}
+                                  })
+        flash("Your comment has been edited")
+        return redirect(url_for("get_crypto",
+                                crypto_id=crypto_id))
     else:
         return redirect(url_for("get_crypto",
                                 crypto_id=crypto_id))
