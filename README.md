@@ -46,10 +46,6 @@ As a registered user I want to:
 1. Delete comments I have submitted.
 <br>
 
-As a admin user I want to:
-
-1. Delete comments from any user to prevent spam.
-
 ### Structure
 
 ### Design
@@ -71,7 +67,10 @@ To see the wireframes for all pages on both desktop and mobile view please click
 <br>
 [Wireframes](wireframes/wireframes.pdf)
 <br>
+- #### Data Structure
+This site uses MongoDB. Its database contains the following collections:
 <br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/data-structure.JPG)
 
 ## Features
 
@@ -145,7 +144,49 @@ Below is all the browsers and devices the website has been tested on.
 
 ## Deployment
 
+This project was created using GitHub/GitPod and deployed using Heroku.
+
+### Cloning
+
+In order to clone this project:
+
+1. Log in to Github and find the Github Repository.
+2. Click the "code" button and copy the HTTPS link
+3. Open Git terminal and type "git clone" followed by the link and hit "enter".
+
+### Database Setup
+
+In order to set up a database in MongoDB:
+
+1. Login to MongoDB
+2. Create a cluster as well as a database.
+3. Create three collections within your database following this [data structure](#data-structure)
+
+### Heroku Deployment
+
+1. Add an env.py file to your workspace containing the following variables:
+  - os.environ["PORT"] = "5000"
+  - os.environ["IP"] = "0.0.0.0"
+  - os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+  - os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+  - os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+2. Create an application:
+  - Log in to Heroku
+  - Click on the "New" button and "Create new app"
+3. Connect to Github
+  - Click on the "Deploy" tab and "Connect to GitHub"
+  - Enter the name of your GitHub repository and click "Connect"
+  - Go to the "Settings" tab and create config vars based on variables created in env.py previously
+  - Once all your GitHub files are pushed, navigate back to the "Deploy" tab, select "Enable automatic deploys" and deploy the branch to Heroku
+
+
 ## Credits
+
+### Content
+The text content for the Crypto about section was taken from:
+<br>
+https://www.coinbase.com/
+
 
 
   
