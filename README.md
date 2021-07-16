@@ -3,7 +3,6 @@
 ## Contents
 * [Purpose](#Purpose)
 * [UX](#UX)
-* [Features](#Features)
 * [Technologies](#Technologies)
 * [Testing](#Testing)
 * [Supported Browsers And Devices](#Supported-Browsers-And-Devices)
@@ -16,10 +15,10 @@
 The purpose of this project is to showcase everything I have learned within the Python and Backend Development modules of the Code Institute Full Stack Development course. A full list of technologies used can be found in the technologies section of this document.
 <br>
 <br>
-The purpose of the website is to allow users to browse and comment on Cryptocurrencies as well as create their own watchlists. 
+The purpose of the website is to allow users to browse and comment on cryptocurrencies as well as create their own watchlist. 
 <br>
 <br>
-Disclaimer: This website is for educational purposes only , this is not financial advise.
+Disclaimer: This website is for educational purposes only, this is not financial advice.
 <br>
 Please see below for the link to the website.
 
@@ -30,7 +29,7 @@ https://coinhold-ms3.herokuapp.com/
 ## UX
 
 ### User Stories
-As a anonymous user I want to:
+As an anonymous user I want to:
 
 1. Browse cryptocurrencies.
 1. Search for cryptocurrencies I am interested in.
@@ -39,18 +38,11 @@ As a anonymous user I want to:
 
 As a registered user I want to:
 
-1. Add crpytocurrencies to my own watchlist.
+1. Add cryptocurrencies to my own watchlist.
 1. Remove cryptocurrencies from my watchlist.
 1. Comment on cryptocurrencies.
 1. Edit comments I have submitted.
 1. Delete comments I have submitted.
-<br>
-
-As a admin user I want to:
-
-1. Delete comments from any user to prevent spam.
-
-### Structure
 
 ### Design
 
@@ -71,19 +63,17 @@ To see the wireframes for all pages on both desktop and mobile view please click
 <br>
 [Wireframes](wireframes/wireframes.pdf)
 <br>
+#### Data Structure
+This site uses MongoDB. Its database contains the following collections:
 <br>
-
-## Features
-
-### Planned Features
-* The header will contain a sticky navigation bar. For unregistered users this will have 3 links which will direct you to the following pages; Browse, Log In & Register. For registered users this will show links to the Browse and Watchlist page as well as a Log Out link.
-* The mobile view will get rid of the navigation bar and instead have a navigation button. When clicking this button, the navigation links will appear vertically on the page. 
-* The Home page will display Cryptocurrencies and a register button for unregistered users. Clicking on a Crypto will take you to another page displaying more information about it. Registered users will be able to submit, edit and delete their own comments.
-* The Register page will allow users to register to the website.
-* The Log In page will allow registered users to log in to the website.
-* The Watchlist page will allow registered users to create their own Watchlist of cryptocurrencies.
-* The Log Out page will allow registered users to log out of the website.
-
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/data-structure.JPG)
+<br>
+#### Final Pages
+* Home - Displays a list of cryptocurrencies. This list can be filtered with the search bar. Registered users can add cryptocurrencies to their watchlist.
+* Watchlist - Displays a list of cryptocurrencies that a registered user has added to their watchlist.
+* Crypto - Display information about the selected crypto. Registered users can submit, edit and delete comments to this page. Non-registered users can view comments.
+* Log In - Registered users can log in on this page.
+* Register - New users can register to the website on this page.
 
 ## Technologies
 
@@ -145,7 +135,49 @@ Below is all the browsers and devices the website has been tested on.
 
 ## Deployment
 
+This project was created using GitHub/GitPod and deployed using Heroku.
+
+### Cloning
+
+In order to clone this project:
+
+1. Log in to GitHub and find the GitHub Repository.
+2. Click the "code" button and copy the HTTPS link
+3. Open Git terminal and type "git clone" followed by the link and hit "enter".
+
+### Database Setup
+
+In order to set up a database in MongoDB:
+
+1. Login to MongoDB
+2. Create a cluster as well as a database.
+3. Create three collections within your database following this [data structure](#data-structure)
+
+### Heroku Deployment
+
+1. Add an env.py file to your workspace containing the following variables:
+  - os.environ["PORT"] = "5000"
+  - os.environ["IP"] = "0.0.0.0"
+  - os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+  - os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+  - os.environ["MONGO_DBNAME"]= "DATABASE_NAME"
+2. Create an application:
+  - Log in to Heroku
+  - Click on the "New" button and "Create new app"
+3. Connect to GitHub
+  - Click on the "Deploy" tab and "Connect to GitHub"
+  - Enter the name of your GitHub repository and click "Connect"
+  - Go to the "Settings" tab and create config vars based on variables created in env.py previously
+  - Once all your GitHub files are pushed, navigate back to the "Deploy" tab, select "Enable automatic deploys" and deploy the branch to Heroku
+
+
 ## Credits
+
+### Content
+The text content for the Crypto about section was taken from:
+<br>
+https://www.coinbase.com/
+
 
 
   
