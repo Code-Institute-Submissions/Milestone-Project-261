@@ -77,15 +77,21 @@ This site uses MongoDB. Its database contains the following collections:
 
 ## Technologies
 
-* **HTML** - This has been used to structure the project.
-* **CSS** - This has been used to style the project.
-* **Java Script** - This has been used to add complex features to the project.
-* **Bootstrap** - This has been used to create the navigation bar and contact form.
-* **Font Awesome** - This has been used to import Oswald font and social media icons.
-* **GitHub** - This has been used to store and deploy the code for the project.
-* **GitPod** - This has been used to create the code for the project.
-* **Google Chrome Developer Tools** - This has been used to inspect the web pages and debug any issues.
-* **Balsamiq Wireframes** - This has been used to create the wireframes for the project.
+* **HTML** - Used to structure the project.
+* **CSS** - Used to style the project.
+* **JavaScript** - Used to collapse the navigation bar.
+* **Python** - Used to create the backend of the project.
+* **JQuery** - Used to add effects to the comment form.
+* **Jinja** - Used as a template engine.
+* **MongoDB** - Used for storing and retrieving information for the project.
+* **Flask** - Used to provide a variety of libraries and tools for the project.
+* **Bootstrap** - Used to create the navigation bar, forms and modals.
+* **Font Awesome** - Used to import Oswald font and social media icons.
+* **GitHub** - Used to store code for the project.
+* **GitPod** - Used to create the code for the project.
+* **Heroku** - Used to deploy the project.
+* **Google Chrome Developer Tools** - Used to inspect the web pages and debug any issues.
+* **Balsamiq Wireframes** - Used to create the wireframes for the project.
 <br>
 
 
