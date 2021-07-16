@@ -107,7 +107,13 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    # user can't access login page if they are already logged in
+    if 'user' in session:
+        flash("You are already logged in!")
+        return redirect(url_for(
+                        "index", username=session["user"]))
+    else:
+        return render_template("login.html")
 
 
 @app.route("/logout")
