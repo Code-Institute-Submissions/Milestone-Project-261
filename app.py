@@ -77,12 +77,13 @@ def register():
         users_coll.insert_one(register)
         session["user"] = request.form.get("username").lower()
         flash("Registration successful!")
+        return redirect(url_for("index", username=session["user"]))
 
     # user can't access register page if they are already registered
     if 'user' in session:
         flash("You are already registered!")
         return redirect(url_for(
-                        "index", username=session["user"]))
+                        "login", username=session["user"]))
     return render_template("register.html")
 
 
