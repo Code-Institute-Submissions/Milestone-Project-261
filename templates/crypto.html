@@ -116,8 +116,10 @@
                             <textarea class="form-control comment-input" name="edited-comment" rows="3"
                                 required>{{ comment.comment }}</textarea>
                         </div>
-                        <button type="submit" class="save-button">Save</button>
-                        <button type="button" class="cancel-button cancel-edit-comment">Cancel</button>
+                        <div class="save-cancel">
+                            <button type="submit" class="save-button">Save</button>
+                            <button type="button" class="cancel-button cancel-edit-comment">Cancel</button>
+                        </div>
                     </form>
                     {% if session.user|lower == comment.username|lower %}
                     <a class="delete-comment" id="delete-comment-{{ comment._id }}"
