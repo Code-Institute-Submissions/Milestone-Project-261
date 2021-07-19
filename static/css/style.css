@@ -71,7 +71,6 @@ html {
 
 /* ---------------------------------------------Home Page */
 
-
 /* https://www.bootdey.com/snippets/view/General-Search-Results */
 
 .search-button {
@@ -484,6 +483,8 @@ label.form-label {
 
 /* ---------------------------------------------404 Page */
 
+/* https://css-tricks.com/adding-stroke-to-web-text/ */
+
 .error-header-text {
 	text-align: center;
 	margin: auto;
@@ -494,7 +495,8 @@ label.form-label {
 	letter-spacing: 1px;
 }
 
-.error-text, .home-link {
+.error-text,
+.home-link {
 	text-align: center;
 	margin: auto;
 	font-weight: 400;
@@ -677,7 +679,8 @@ label.form-label {
 	.error-header-text {
 		font-size: 150px;
 	}
-	.error-text, .home-link {
+	.error-text,
+	.home-link {
 		font-size: 14px;
 	}
 }
@@ -856,7 +859,8 @@ label.form-label {
 	.error-header-text {
 		font-size: 200px;
 	}
-	.error-text, .home-link {
+	.error-text,
+	.home-link {
 		font-size: 17px;
 	}
 }
@@ -1035,7 +1039,8 @@ label.form-label {
 	.error-header-text {
 		font-size: 200px;
 	}
-	.error-text, .home-link {
+	.error-text,
+	.home-link {
 		font-size: 17px;
 	}
 }
@@ -1211,7 +1216,8 @@ label.form-label {
 	.add-coin-text {
 		font-size: 25px;
 	}
-	.error-text, .home-link {
+	.error-text,
+	.home-link {
 		font-size: 22px;
 	}
 }

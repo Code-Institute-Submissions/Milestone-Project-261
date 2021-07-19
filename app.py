@@ -1,11 +1,11 @@
 import os
+from datetime import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -36,9 +36,8 @@ def index():
         return render_template("index.html",
                                cryptos=cryptos,
                                watched_cryptos=watched_cryptos)
-    else:
-        return render_template("index.html",
-                               cryptos=cryptos)
+    return render_template("index.html",
+                           cryptos=cryptos)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -54,9 +53,8 @@ def search():
         return render_template("index.html",
                                cryptos=cryptos,
                                watched_cryptos=watched_cryptos)
-    else:
-        return render_template("index.html",
-                               cryptos=cryptos)
+    return render_template("index.html",
+                           cryptos=cryptos)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -85,8 +83,7 @@ def register():
         flash("You are already registered!")
         return redirect(url_for(
                         "index", username=session["user"]))
-    else:
-        return render_template("register.html")
+    return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -119,8 +116,7 @@ def login():
         flash("You are already logged in!")
         return redirect(url_for(
                         "index", username=session["user"]))
-    else:
-        return render_template("login.html")
+    return render_template("login.html")
 
 
 @app.route("/logout")
@@ -159,9 +155,8 @@ def add_watchlist(crypto_id, url):
             {"$push": {"watched_cryptos": ObjectId(crypto_id)}})
         if url == "index":
             return redirect(url_for("index"))
-        else:
-            return redirect(url_for("get_crypto",
-                                    crypto_id=crypto_id))
+    return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
 
 
 @app.route("/remove_watchlist/<crypto_id>/<url>")
@@ -175,11 +170,10 @@ def remove_watchlist(crypto_id, url):
             {"$pull": {"watched_cryptos": ObjectId(crypto_id)}})
         if url == "index":
             return redirect(url_for("index"))
-        elif url == "watchlist":
+        if url == "watchlist":
             return redirect(url_for("watchlist", username=username))
-        else:
-            return redirect(url_for("get_crypto",
-                                    crypto_id=crypto_id))
+    return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
 
 
 @app.route("/get_crypto/<crypto_id>")
@@ -200,10 +194,9 @@ def get_crypto(crypto_id):
                                crypto=crypto,
                                watched_cryptos=watched_cryptos,
                                comments=comments)
-    else:
-        return render_template("crypto.html",
-                               crypto=crypto,
-                               comments=comments)
+    return render_template("crypto.html",
+                           crypto=crypto,
+                           comments=comments)
 
 
 @app.route("/add_comment/<crypto_id>", methods=["POST"])
@@ -232,9 +225,8 @@ def add_comment(crypto_id):
         flash("Thank you for commenting")
         return redirect(url_for("get_crypto",
                                 crypto_id=crypto_id))
-    else:
-        return redirect(url_for("get_crypto",
-                                crypto_id=crypto_id))
+    return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
 
 
 @app.route("/delete_comment/<crypto_id>/<comment_id>")
@@ -248,20 +240,18 @@ def delete_comment(crypto_id, comment_id):
             return redirect(url_for("get_crypto",
                             crypto_id=crypto_id))
         # if comment was added by the user, remove from the comments collection
-        else:
-            if session["user"]:
-                comments_coll.remove({"_id": ObjectId(comment_id)})
-                # remove comment from crypto's comment array
-                cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
-                                        {"$pull":
-                                         {"comments": ObjectId(comment_id)}
-                                         })
-                flash("Your comment has been deleted")
-                return redirect(url_for("get_crypto",
-                                        crypto_id=crypto_id))
-    else:
-        return redirect(url_for("get_crypto",
-                                crypto_id=crypto_id))
+        if session["user"]:
+            comments_coll.remove({"_id": ObjectId(comment_id)})
+            # remove comment from crypto's comment array
+            cryptos_coll.update_one({"_id": ObjectId(crypto_id)},
+                                    {"$pull":
+                                    {"comments": ObjectId(comment_id)}
+                                     })
+            flash("Your comment has been deleted")
+            return redirect(url_for("get_crypto",
+                                    crypto_id=crypto_id))
+    return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
 
 
 @app.route("/edit_comment/<crypto_id>/<comment_id>", methods=["POST"])
@@ -278,11 +268,11 @@ def edit_comment(crypto_id, comment_id):
         flash("Your comment has been edited")
         return redirect(url_for("get_crypto",
                                 crypto_id=crypto_id))
-    else:
-        return redirect(url_for("get_crypto",
-                                crypto_id=crypto_id))
+    return redirect(url_for("get_crypto",
+                            crypto_id=crypto_id))
 
 
+# https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(404)
 def page_not_found(e):
     # renders 404 error page
