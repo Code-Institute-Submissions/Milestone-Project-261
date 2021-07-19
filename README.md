@@ -102,10 +102,66 @@ This site uses MongoDB. Its database contains the following collections:
 * HTML file has been validated using the W3C HTML Validation Service website.
 * CSS file has been validated using the W3C CSS Validation Service website.
 * JS files have been validated using the JSHint website.
-* Python files have been validated using the PEP8 website.
+* Python files have been validated using the pylint.
 <br>
 
 ### User Story Testing
+
+**User Story** – Browse cryptocurrencies.
+<br>
+**Result** – The home page displays a list of cryptocurrencies which can be seen by any user.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/browse.JPG)
+<br>
+<br>
+
+**User Story** – Search for cryptocurrencies I am interested in.
+<br>
+**Result** – The home page has a search bar which can be used by any user to search for cryptocurrencies using their name or abbreviated name. If a crypto does not match what is searched then a "No results found" message will appear. The page can be refreshed using the refresh button in the search bar.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/search.JPG)
+<br>
+<br>
+
+**User Story** – See comments on cryptocurrencies from other people.
+<br>
+**Result** – Any user can see comments on a cryptocurrency by clicking on the crypto name or icon on the home page as well as their watchlist.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/see-comments.JPG)
+<br>
+<br>
+
+**User Story** – Add/Remove crytocurrencies from a watchlist.
+<br>
+**Result** – A logged in user can add a crypto to a watchlist by clicking the star icon, this can be done on the home page and the crypto pages. If they would like to remove the crypto from the watchlist they can just click the star icon again. This can be done on the home, watchlist and crypto pages.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/watchlist.JPG)
+<br>
+<br>
+
+**User Story** – Comment on cryptocurrencies.
+<br>
+**Result** – A logged in user can comment on any cryptocurrency. This can be done on the crypto pages using the comment form.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/add-comment.JPG)
+<br>
+<br>
+
+**User Story** – Edit comments I have submitted.
+<br>
+**Result** – A user can edit a comment that they have previously submitted. This can be done by locating the comment and clickingit. A form will open which allows the user to either edit their comment or cancel the form.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/edit-comment.JPG)
+<br>
+<br>
+
+**User Story** – Delete comments I have submitted.
+<br>
+**Result** – A user can delete a comment that they have previously submitted. This can be done by locating the comment and clicking delete.
+<br>
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/delete-comment.JPG)
+<br>
+<br>
 
 ### Additional Testing
 
