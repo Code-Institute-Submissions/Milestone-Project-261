@@ -248,7 +248,12 @@ In order to set up a database in MongoDB:
   - Enter the name of your GitHub repository and click "Connect"
   - Go to the "Settings" tab and create config vars based on variables created in env.py previously
   - Once all your GitHub files are pushed, navigate back to the "Deploy" tab, select "Enable automatic deploys" and deploy the branch to Heroku
+  
+### GitPod Deployment
 
+1. Open the Milestone-Project-3 repository and click the GitPod button in the top right.
+2. In the command console type the following and hit enter: python3 app.py
+3. Click the Open Browser button for port 8080, this will display a preview of the website.
 
 ## Credits
 
