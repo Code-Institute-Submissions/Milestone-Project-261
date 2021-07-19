@@ -102,10 +102,67 @@ This site uses MongoDB. Its database contains the following collections:
 * HTML file has been validated using the W3C HTML Validation Service website.
 * CSS file has been validated using the W3C CSS Validation Service website.
 * JS files have been validated using the JSHint website.
-* Python files have been validated using the PEP8 website.
+* Python files have been validated using the pylint.
 <br>
 
 ### User Story Testing
+
+**User Story** – Browse cryptocurrencies.
+<br>
+* The home page displays a list of cryptocurrencies which can be seen by any user.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/browse.JPG)
+<br>
+<br>
+
+**User Story** – Search for cryptocurrencies I am interested in.
+<br>
+* The home page has a search bar which can be used by any user to search for cryptocurrencies using their name or abbreviated name. 
+* If a crypto does not match what is searched then a "No results found" message will appear. 
+* The page can be refreshed using the refresh button in the search bar.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/search.JPG)
+<br>
+<br>
+
+**User Story** – See comments on cryptocurrencies from other people.
+<br>
+* Any user can see comments on a cryptocurrency by clicking on the crypto name or icon on the home page as well as their watchlist.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/see-comments.JPG)
+<br>
+<br>
+
+**User Story** – Add/remove crytocurrencies from a watchlist.
+<br>
+* A logged in user can add a crypto to a watchlist by clicking the star icon, this can be done on the home page and the crypto pages. 
+* To remove the crypto from the watchlist a user can just click the star icon again. This can be done on the home, watchlist and crypto pages.
+* Adding/removing cryptos from the watchlist will update the watched_cryptos array in the users collection.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/watchlist.JPG)
+<br>
+<br>
+
+**User Story** – Comment on cryptocurrencies.
+<br>
+* A logged in user can comment on any cryptocurrency. This can be done on the crypto pages using the comment form.
+* When a comment is submitted it is added to the comments collection and the comments array in the cryptos collection.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/add-comment.JPG)
+<br>
+<br>
+
+**User Story** – Edit comments I have submitted.
+<br>
+* A user can edit a comment that they have previously submitted. When the user is logged in an edit button will appear below their comment.
+* When the edit button is clicked the user can either edit their comment or cancel the form.
+* When the comment has been submitted it updates the comments collection.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/edit-comment.JPG)
+<br>
+<br>
+
+**User Story** – Delete comments I have submitted.
+<br>
+* A user can delete a comment that they have previously submitted. When the user is logged in an edit button will appear below their comment.
+* When have delete button has been clicked the comment will be removed from the comments collection and the comments array in the cryptos collection.
+![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/delete-comment.JPG)
+<br>
+<br>
 
 ### Additional Testing
 
@@ -192,7 +249,12 @@ In order to set up a database in MongoDB:
   - Enter the name of your GitHub repository and click "Connect"
   - Go to the "Settings" tab and create config vars based on variables created in env.py previously
   - Once all your GitHub files are pushed, navigate back to the "Deploy" tab, select "Enable automatic deploys" and deploy the branch to Heroku
+  
+### GitPod Deployment
 
+1. Open the Milestone-Project-3 repository and click the GitPod button in the top right.
+2. In the command console type the following and hit enter: python3 app.py
+3. Click the Open Browser button for port 8080, this will display a preview of the website.
 
 ## Credits
 
