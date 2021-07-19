@@ -482,6 +482,27 @@ label.form-label {
 }
 
 
+/* ---------------------------------------------404 Page */
+
+.error-header-text {
+	text-align: center;
+	margin: auto;
+	font-weight: 900;
+	font-size: 250px;
+	-webkit-text-stroke: 1px #ced4da;
+	color: #ffffff;
+	letter-spacing: 1px;
+}
+
+.error-text, .home-link {
+	text-align: center;
+	margin: auto;
+	font-weight: 400;
+	font-size: 25px;
+	padding-bottom: 5px;
+}
+
+
 /* ---------------------------------------------Media Queries*/
 
 @media (max-width: 320px) {
@@ -652,6 +673,12 @@ label.form-label {
 	}
 	.add-coin-text {
 		font-size: 20px;
+	}
+	.error-header-text {
+		font-size: 150px;
+	}
+	.error-text, .home-link {
+		font-size: 14px;
 	}
 }
 
@@ -826,6 +853,12 @@ label.form-label {
 	.add-coin-text {
 		font-size: 20px;
 	}
+	.error-header-text {
+		font-size: 200px;
+	}
+	.error-text, .home-link {
+		font-size: 17px;
+	}
 }
 
 @media (max-width: 499px) and (min-width: 376px) {
@@ -999,6 +1032,12 @@ label.form-label {
 	.add-coin-text {
 		font-size: 22px;
 	}
+	.error-header-text {
+		font-size: 200px;
+	}
+	.error-text, .home-link {
+		font-size: 17px;
+	}
 }
 
 @media (max-width: 540px) and (min-width: 500px) {
@@ -1171,6 +1210,9 @@ label.form-label {
 	}
 	.add-coin-text {
 		font-size: 25px;
+	}
+	.error-text, .home-link {
+		font-size: 22px;
 	}
 }
 

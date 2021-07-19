@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="404">
+    <div class="error-header-text">
+        404
+    </div>
+    <div class="error-text">
+        Sorry, the page you're looking for cannot be found!
+    </div>
+    <div class="home-link">
+        <a href="{{ url_for('index') }}" style="color:#DAA520">Home</a>
+    </div>
+</section>
+
+{% endblock %}
