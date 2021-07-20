@@ -51,7 +51,7 @@ Off White - Background colour, this is because it contrasts well with white and 
 <br>
 White -  Background colour of cryptocurrency content and log in/register forms, this is because it contrasts well with off white.
 <br>
-Black - Navigation bar and body text, this is because it contrasts well with snow.
+Black - Navigation bar and body text, this is because it contrasts well with off white.
 <br>
 Gold - Navigation bar and buttons, this is because it contrasts well with black.
 <br>
@@ -67,7 +67,10 @@ To see the wireframes for all pages on both desktop and mobile view please click
 This site uses MongoDB. Its database contains the following collections:
 <br>
 ![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/data-structure.JPG)
-<br>
+* When a user registers to the website, a new document is added to the users collection which contains an id, username, password and empty watched stocks array.
+* When a user submits a new comment, a new document is added to the comments collection. It contains an id, their username, the date the comment was created. That comment id is then added to the corresponding crypto's comment array in the cryptos collection.
+* When a user adds a crypto to their watchlist, the id of the stock is added to the user's watched cryptos array in the users collection.
+
 #### Final Pages
 * Home - Displays a list of cryptocurrencies. This list can be filtered with the search bar. Registered users can add cryptocurrencies to their watchlist.
 * Watchlist - Displays a list of cryptocurrencies that a registered user has added to their watchlist.
@@ -99,9 +102,9 @@ This site uses MongoDB. Its database contains the following collections:
 
 ### Code Validation
 
-* HTML file has been validated using the W3C HTML Validation Service website.
+* HTML files have been validated using the W3C HTML Validation Service website.
 * CSS file has been validated using the W3C CSS Validation Service website.
-* JS files have been validated using the JSHint website.
+* JS file has been validated using the JSHint website.
 * Python files have been validated using the pylint.
 <br>
 
@@ -130,7 +133,7 @@ This site uses MongoDB. Its database contains the following collections:
 <br>
 <br>
 
-**User Story** – Add/remove crytocurrencies from a watchlist.
+**User Story** – Add/remove cryptocurrencies from a watchlist.
 <br>
 * A logged in user can add a crypto to a watchlist by clicking the star icon, this can be done on the home page and the crypto pages. 
 * To remove the crypto from the watchlist a user can just click the star icon again. This can be done on the home, watchlist and crypto pages.
@@ -159,7 +162,7 @@ This site uses MongoDB. Its database contains the following collections:
 **User Story** – Delete comments I have submitted.
 <br>
 * A user can delete a comment that they have previously submitted. When the user is logged in an edit button will appear below their comment.
-* When have delete button has been clicked the comment will be removed from the comments collection and the comments array in the cryptos collection.
+* When the delete button has been clicked the comment will be removed from the comments collection and the comments array in the cryptos collection.
 ![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/delete-comment.JPG)
 <br>
 <br>
@@ -170,16 +173,17 @@ This site uses MongoDB. Its database contains the following collections:
 * If a logged in user tries to access the register page they will be redirected to the home page. "You are already registered!" message appears.
 * If a user who is not logged in tries to add a crypto to a watchlist, "Please log in or register to add to watchlist" message appears.
 * A comment can only be deleted/edited by the user who created the comment.
-* If a user tries to register with a username or password that does not match the requirements, "Please match the format requested" meesage appears.
+* If a user tries to register with a username or password that does not match the requirements, "Please match the format requested" message appears.
 * If a user tries to register without filling in both the username and password fields, "Please fill in this field" message appears.
-* If a user tried to submit a blank comment, "Please fill in this field" message appears.
 * If a user tries to register with a username that has already been taken, "You are already registered!" message appears.
-* If a users login attempt is unsuccessfull, "Incorrect Username and/or Password" message appears.
+* If a user tried to submit a blank comment, "Please fill in this field" message appears.
+* If a user's login attempt is unsuccessful, "Incorrect Username and/or Password" message appears.
 * If a new user registers they will be redirected to the home page, "Welcome, username" message appears.
 * If a user logs in they will be redirected to the home page, "Welcome, username" message appears.
 * If a user submits a comment, "Thank you for commenting" message appears.
 * If a user deletes a comment, "Your comment has been deleted" message appears.
 * If a user edits a comment, "Your comment has been edited" message appears.
+* If a user tries to access a page that does not exist they will be redirected to a 404 error page. This has a link to go back to the home page.
 <br>
 
 ## Supported Browsers And Devices
@@ -259,9 +263,10 @@ In order to set up a database in MongoDB:
 ## Credits
 
 ### Content
-The text content for the Crypto about section was taken from:
-<br>
-https://www.coinbase.com/
+The text content for the Crypto about section was taken from: https://www.coinbase.com/
+
+### Code
+All code from external sources have been attributed to its original source via comments above the code.
 
 
 
