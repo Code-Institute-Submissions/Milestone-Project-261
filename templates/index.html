@@ -7,17 +7,13 @@
             <div class="page-header">Cryptocurrency is the Future</div>
             <div class="page-text">Share your thoughts with other investors today!</div>
             {% if session.user %}
-            <button class="header-button">
-                <a href="{{ url_for('watchlist') }}" style="color:#000000">
-                    Watchlist
-                </a>
-            </button>
+            <a class="header-button" href="{{ url_for('watchlist') }}" style="color:#000000">
+                Watchlist
+            </a>
             {% else %}
-            <button class="header-button">
-                <a href="{{ url_for('register') }}" style="color:#000000">
-                    Register Now
-                </a>
-            </button>
+            <a class="header-button" href="{{ url_for('register') }}" style="color:#000000">
+                Register Now
+            </a>
             {% endif %}
         </div>
     </div>
