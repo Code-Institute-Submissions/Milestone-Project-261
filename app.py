@@ -83,7 +83,7 @@ def register():
     if 'user' in session:
         flash("You are already registered!")
         return redirect(url_for(
-                        "login", username=session["user"]))
+                        "index", username=session["user"]))
     return render_template("register.html")
 
 
