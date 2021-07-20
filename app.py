@@ -1,3 +1,4 @@
+""" app module """
 import os
 from datetime import datetime
 from flask import (
@@ -26,7 +27,7 @@ comments_coll = mongo.db.comments
 @app.route("/")
 @app.route("/index")
 def index():
-    # list all cryptos
+    """ finds cryptos for home page"""
     cryptos = list(cryptos_coll.find())
     # show watched cryptos
     if 'user' in session:
@@ -41,8 +42,8 @@ def index():
 
 
 @app.route("/search", methods=["GET", "POST"])
-# search query in cryptos collection
 def search():
+    """ search query in cryptos collection """
     query = request.form.get("query")
     cryptos = list(mongo.db.cryptos.find({"$text": {"$search": query}}))
     # show watched cryptos
@@ -58,8 +59,8 @@ def search():
 
 
 @app.route("/register", methods=["GET", "POST"])
-# registers a new user
 def register():
+    """ registers a new user """
     if request.method == "POST":
         existing_user = users_coll.find_one(
             {"username": request.form.get("username").lower()})
@@ -68,13 +69,13 @@ def register():
             flash("You are already registered!")
             return redirect(url_for("register"))
 
-        register = {
+        register_user = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "watched_cryptos": []
         }
 
-        users_coll.insert_one(register)
+        users_coll.insert_one(register_user)
         session["user"] = request.form.get("username").lower()
         flash("Registration successful!")
         return redirect(url_for("index", username=session["user"]))
@@ -89,6 +90,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """ logs in the user """
     if request.method == "POST":
         # check if username exists in db
         existing_user = users_coll.find_one(
@@ -122,6 +124,7 @@ def login():
 
 @app.route("/logout")
 def logout():
+    """ logs out the user """
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
@@ -129,8 +132,8 @@ def logout():
 
 
 @app.route("/watchlist")
-# get user watchlist
 def watchlist():
+    """ get user watchlist """
     if "user" in session:
         username = users_coll.find_one(
             {"username": session["user"]})
@@ -143,13 +146,14 @@ def watchlist():
             return render_template("watchlist.html",
                                    username=username,
                                    watched_cryptos=watched_cryptos)
+    # direct user to home if not logged in
     else:
-        return redirect(url_for("watchlist.html"))
+        return redirect(url_for("index"))
 
 
 @app.route("/add_watchlist/<crypto_id>/<url>")
-# add to user watchlist
 def add_watchlist(crypto_id, url):
+    """ add to user watchlist """
     if "user" in session:
         users_coll.find_one_and_update(
             {"username": session["user"]},
@@ -161,8 +165,8 @@ def add_watchlist(crypto_id, url):
 
 
 @app.route("/remove_watchlist/<crypto_id>/<url>")
-# remove from user watchlist
 def remove_watchlist(crypto_id, url):
+    """ remove from user watchlist """
     if "user" in session:
         username = users_coll.find_one(
             {"username": session["user"]})["username"]
@@ -178,8 +182,8 @@ def remove_watchlist(crypto_id, url):
 
 
 @app.route("/get_crypto/<crypto_id>")
-# get the crypto using the crypto id
 def get_crypto(crypto_id):
+    """ get the crypto using the crypto id """
     crypto = cryptos_coll.find_one({"_id": ObjectId(crypto_id)})
     comments = []
     # loop through the crypto comments
@@ -201,8 +205,8 @@ def get_crypto(crypto_id):
 
 
 @app.route("/add_comment/<crypto_id>", methods=["POST"])
-# add comment to the crypto page
 def add_comment(crypto_id):
+    """ add comment to the crypto page """
     if "user" in session:
         # https://www.programiz.com/python-programming/datetime/strftime
         date_added = datetime.today().strftime("%d/%m/%Y, %H:%M")
@@ -231,8 +235,8 @@ def add_comment(crypto_id):
 
 
 @app.route("/delete_comment/<crypto_id>/<comment_id>")
-# delete comment from the crypto page
 def delete_comment(crypto_id, comment_id):
+    """ delete comment from the crypto page """
     if "user" in session:
         user_comment = comments_coll.find_one({"_id": ObjectId(comment_id),
                                                "username": session["user"]})
@@ -256,8 +260,8 @@ def delete_comment(crypto_id, comment_id):
 
 
 @app.route("/edit_comment/<crypto_id>/<comment_id>", methods=["POST"])
-# edit a users comment
 def edit_comment(crypto_id, comment_id):
+    """ edit a users comment """
     if "user" in session:
         # retrieve the edited comment
         edited_comment = request.form.get("edited-comment")
@@ -276,11 +280,11 @@ def edit_comment(crypto_id, comment_id):
 # https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(404)
 def page_not_found(e):
-    # renders 404 error page
+    """ renders 404 error page """
     return render_template("404.html")
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
