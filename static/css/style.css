@@ -183,11 +183,15 @@ html {
 
 .modal-button {
 	font-size: 16px;
+	font-weight: 400;
 	border-radius: 8px;
 	letter-spacing: 0.5px;
 	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
 	width: 80px;
 	height: 40px;
+	display: inline-block;
 	background: #DAA520;
 	border: 0;
 	margin: 0px 5px;
@@ -397,11 +401,14 @@ label.form-label {
 	border-radius: 8px;
 	letter-spacing: 0.5px;
 	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
 	width: 70px;
 	height: 30px;
 	background: #DAA520;
 	border: 0;
 	margin: 0px 3px;
+	display: inline-block;
 }
 
 .comment-card {
@@ -619,6 +626,7 @@ label.form-label {
 	.cancel-button {
 		font-size: 11px;
 		height: 25px;
+		line-height: 25px;
 		width: 70px;
 	}
 	.comments-header {
@@ -650,6 +658,7 @@ label.form-label {
 	.modal-button {
 		font-size: 13px;
 		height: 25px;
+		line-height: 25px;
 		width: 70px;
 	}
 	.close {
@@ -800,6 +809,7 @@ label.form-label {
 	.cancel-button {
 		font-size: 12px;
 		height: 25px;
+		line-height: 25px;
 		width: 75px;
 	}
 	.comments-header {
@@ -831,6 +841,7 @@ label.form-label {
 	.modal-button {
 		font-size: 13px;
 		height: 25px;
+		line-height: 25px;
 		width: 75px;
 	}
 	.close {
@@ -980,7 +991,6 @@ label.form-label {
 	.save-button,
 	.cancel-button {
 		font-size: 13px;
-		height: 30px;
 		width: 75px;
 	}
 	.comments-header {
@@ -1012,6 +1022,7 @@ label.form-label {
 	.modal-button {
 		font-size: 14px;
 		height: 30px;
+		line-height: 30px;
 		width: 75px;
 	}
 	.close {
@@ -1161,7 +1172,6 @@ label.form-label {
 	.save-button,
 	.cancel-button {
 		font-size: 14px;
-		height: 30px;
 		width: 75px;
 	}
 	.comments-header {
@@ -1193,6 +1203,7 @@ label.form-label {
 	.modal-button {
 		font-size: 14px;
 		height: 30px;
+		line-height: 30px;
 		width: 75px;
 	}
 	.close {
