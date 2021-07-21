@@ -74,7 +74,7 @@ This site uses MongoDB. Its database contains the following collections:
 #### Final Pages
 * Home - Displays a list of cryptocurrencies. This list can be filtered with the search bar. Registered users can add cryptocurrencies to their watchlist.
 * Watchlist - Displays a list of cryptocurrencies that a registered user has added to their watchlist.
-* Crypto - Display information about the selected crypto. Registered users can submit, edit and delete comments to this page. Non-registered users can view comments.
+* Crypto - Display information about the selected crypto. Registered users can submit, edit and delete their own comments on this page. Non-registered users can view comments.
 * Log In - Registered users can log in on this page.
 * Register - New users can register to the website on this page.
 
@@ -89,7 +89,7 @@ This site uses MongoDB. Its database contains the following collections:
 * **MongoDB** - Used for storing and retrieving information for the project.
 * **Flask** - Used to provide a variety of libraries and tools for the project.
 * **Bootstrap** - Used to create the navigation bar, forms and modals.
-* **Font Awesome** - Used to import Oswald font and social media icons.
+* **Font Awesome** - Used to import Oswald font and icons.
 * **GitHub** - Used to store code for the project.
 * **GitPod** - Used to create the code for the project.
 * **Heroku** - Used to deploy the project.
@@ -105,7 +105,7 @@ This site uses MongoDB. Its database contains the following collections:
 * HTML files have been validated using the W3C HTML Validation Service website.
 * CSS file has been validated using the W3C CSS Validation Service website.
 * JS file has been validated using the JSHint website.
-* Python files have been validated using the pylint.
+* Python file has been validated using the pylint.
 <br>
 
 ### User Story Testing
@@ -152,7 +152,7 @@ This site uses MongoDB. Its database contains the following collections:
 
 **User Story** – Edit comments I have submitted.
 <br>
-* A user can edit a comment that they have previously submitted. When the user is logged in an edit button will appear below their comment.
+* A user can edit a comment that they have previously submitted. When the user is logged in a edit button will appear below their comment.
 * When the edit button is clicked the user can either edit their comment or cancel the form.
 * When the comment has been submitted it updates the comments collection.
 ![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/edit-comment.JPG)
@@ -161,7 +161,7 @@ This site uses MongoDB. Its database contains the following collections:
 
 **User Story** – Delete comments I have submitted.
 <br>
-* A user can delete a comment that they have previously submitted. When the user is logged in an edit button will appear below their comment.
+* A user can delete a comment that they have previously submitted. When the user is logged in a delete button will appear below their comment.
 * When the delete button has been clicked the comment will be removed from the comments collection and the comments array in the cryptos collection.
 ![alt text](https://github.com/sanjaysanghera/Milestone-Project-3/blob/master/static/images/user-stories/delete-comment.JPG)
 <br>
@@ -172,6 +172,7 @@ This site uses MongoDB. Its database contains the following collections:
 * If a logged in user tries to access the log in page they will be redirected to the home page. "You are already logged in!" message appears.
 * If a logged in user tries to access the register page they will be redirected to the home page. "You are already registered!" message appears.
 * If a user who is not logged in tries to add a crypto to a watchlist, "Please log in or register to add to watchlist" message appears.
+* If a user who is not logged in tries to access the watchlist page they will be redirected to the home page.
 * A comment can only be deleted/edited by the user who created the comment.
 * If a user tries to register with a username or password that does not match the requirements, "Please match the format requested" message appears.
 * If a user tries to register without filling in both the username and password fields, "Please fill in this field" message appears.
